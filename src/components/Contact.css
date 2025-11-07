@@ -1,0 +1,37 @@
+.contact-section {
+  min-height: 50vh; /* Không cần full 100vh */
+  text-align: center;
+  background: var(--color-dark-primary); /* Vùng tối nhất */
+  border-bottom: none; /* Section cuối cùng */
+}
+
+.contact-container {
+  max-width: 800px;
+}
+
+.contact-container p {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 40px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.social-icons a {
+  font-size: 3.5rem;
+  color: var(--color-text-primary);
+  transition: color 0.3s ease;
+}
+
+.footer-text {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  padding-top: 30px;
+  margin-top: 30px;
+}

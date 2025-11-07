@@ -1,0 +1,43 @@
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px; /* Khoảng cách giữa 2 cột */
+  margin-top: 50px;
+}
+
+.about-column {
+  flex: 1;
+  min-width: 300px; /* Cho responsive */
+  background: var(--color-dark-primary); /* Tối hơn nền section */
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 5px solid var(--color-red-accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-column h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.about-column ul {
+  list-style: none;
+}
+
+.about-column li {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+}
+
+/* Dấu tick màu đỏ */
+.about-column li::before {
+  content: '✔';
+  color: var(--color-red-accent);
+  position: absolute;
+  left: 0;
+  top: 0;
+}

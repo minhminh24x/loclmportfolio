@@ -1,0 +1,75 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative; /* Dùng cho đường chéo */
+  overflow: hidden; /* Ẩn phần thừa của đường chéo */
+}
+
+.hero-container {
+  z-index: 2; /* Nằm trên đường chéo */
+}
+
+.hero-headline {
+  font-size: 4.5rem;
+}
+
+.hero-name {
+  /* Hiệu ứng gradient đỏ */
+  background: linear-gradient(90deg, var(--color-red-accent), #ff5733);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subheadline {
+  font-size: 2.5rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 30px;
+  height: 80px; /* Đặt chiều cao cố định tránh giật layout */
+}
+
+.hero-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-text-primary);
+  margin-bottom: 40px;
+}
+
+.hero-cta-button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  background-color: var(--color-red-accent);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+}
+
+.hero-cta-button:hover {
+  background-color: #fff;
+  color: var(--color-red-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
+}
+
+/* Đây là hiệu ứng "chia vùng sáng tối" bằng một đường chéo */
+.hero-diagonal-split {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-dark-secondary); /* Vùng "sáng" hơn */
+  
+  /* Tạo đường chéo */
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  
+  z-index: 1; /* Nằm dưới text */
+}

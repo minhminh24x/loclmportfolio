@@ -1,0 +1,88 @@
+/* Sử dụng Google Font (Roboto) cho hiện đại */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+:root {
+  /* Theme Đen-Đỏ */
+  --color-dark-primary: #121212; /* Màu đen tuyền (vùng tối) */
+  --color-dark-secondary: #1e1e1e; /* Màu đen xám (vùng sáng hơn) */
+  --color-red-accent: #DC143C; /* Màu đỏ (Crimson) */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #b3b3b3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-dark-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden; /* Chống cuộn ngang */
+}
+
+/* Định nghĩa style cho các section */
+.section {
+  min-height: 100vh;
+  padding: 100px 10%;
+  border-bottom: 1px solid #333; /* Ngăn cách nhẹ */
+}
+
+/* Vùng sáng / tối xen kẽ */
+.section:nth-child(odd) {
+  background-color: var(--color-dark-primary); /* Vùng tối */
+}
+
+.section:nth-child(even) {
+  background-color: var(--color-dark-secondary); /* Vùng sáng (xám) */
+}
+
+h1, h2, h3 {
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-red-accent); /* Tiêu đề màu đỏ */
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--color-red-accent);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-red-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-text-primary);
+}
+
+/* Container chung */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
