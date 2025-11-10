@@ -1,0 +1,40 @@
+.future-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.future-card {
+  background: var(--color-dark-secondary);
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  border-top: 5px solid var(--color-red-accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.future-card:hover {
+  transform: translateY(-10px);
+  /* === HIỆU ỨNG MỚI === */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px var(--color-red-accent);
+}
+
+.future-icon {
+  font-size: 4rem;
+  color: var(--color-red-accent);
+  margin-bottom: 20px;
+}
+
+.future-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--color-text-primary);
+}
+
+.future-card p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}

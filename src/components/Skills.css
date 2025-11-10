@@ -1,3 +1,7 @@
+/* THAY THẾ TOÀN BỘ FILE NÀY */
+
+/* ĐÃ XÓA: .skills-container, .skills-column, .skills-cube-column */
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -10,9 +14,15 @@
   padding: 30px;
   text-align: center;
   border-radius: 10px;
-  border: 2px solid transparent; /* Chuẩn bị cho hover */
+  border: 2px solid transparent;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  scale: 1.05; 
+  border-color: var(--color-red-accent);
+  box-shadow: 0 0 20px var(--color-red-accent);
 }
 
 .skill-icon {
@@ -29,5 +39,22 @@
 
 .skill-card p {
   font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.skills-subtitle {
+  margin-top: 80px;
+  font-size: 2.2rem;
+  border-top: 1px solid #444;
+  padding-top: 40px;
+}
+
+.soft-skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.soft-skill-card p {
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--color-text-secondary);
 }

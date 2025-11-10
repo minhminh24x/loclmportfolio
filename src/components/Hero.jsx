@@ -1,48 +1,71 @@
+/* THAY THẾ TOÀN BỘ FILE NÀY */
+
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import './Hero.css';
+import avatar from '../assets/avatar.png';
+import { useLanguage } from '../context/LanguageContext';
 
-// Component Hero - Giới thiệu ban đầu
 function Hero() {
+  const { language, translations } = useLanguage();
+  const heroT = translations[language].hero;
+
   return (
     <section id="home" className="section hero-section">
+
+      {/* === SỬA LỖI NỀN BỊ MỜ === */}
+      {/* * Hiệu ứng nền được đưa ra ngoài, 
+        * làm SIBLING (anh em) với hero-container.
+        * Nó sẽ có z-index: 1 
+      */}
+      <div className="hero-background-gradient"></div>
+
+      {/* * Container chứa nội dung sẽ có z-index: 2
+        * và nằm TRÊN lớp nền.
+      */}
       <div className="hero-container">
-        {/* Hiệu ứng fade in */}
+        
+        {/* Cột 1: Text */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          className="hero-content"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1 className="hero-headline">
-            👋 Xin chào, mình là <span className="hero-name">Lê Minh Lộc</span>!
+            {heroT.greeting} <span className="hero-name">{heroT.name}</span>
           </h1>
+          <h3 className="hero-subtitle">{heroT.subtitle}</h3>
           
-          {/* Hiệu ứng gõ chữ */}
           <TypeAnimation
-            sequence={[
-              'Backend Developer',
-              2000,
-              'Web & System Developer',
-              2000,
-              'IoT & Game Enthusiast',
-              2000,
-            ]}
-            wrapper="h3"
+            key={language}
+            sequence={heroT.sequence}
+            wrapper="h2"
             speed={50}
             className="hero-subheadline"
             repeat={Infinity}
           />
           <p className="hero-quote">
-            “Code is the art of turning ideas into reality.”
+            {heroT.quote}
           </p>
-          <a href="#projects" className="hero-cta-button">
-            Xem dự án của mình
+          <a href="#what-i-done" className="hero-cta-button">
+            {heroT.cta}
           </a>
         </motion.div>
+
+        {/* Cột 2: Avatar */}
+        <motion.div 
+          className="hero-avatar"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
+        >
+          <img src={avatar} alt="Lê Minh Lộc" />
+        </motion.div>
       </div>
-      {/* Đường chéo chia vùng sáng/tối */}
-      <div className="hero-diagonal-split"></div>
+      {/* === HẾT SỬA LỖI === */}
+
     </section>
   );
 }

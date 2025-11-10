@@ -1,31 +1,233 @@
+/* THAY THẾ TOÀN BỘ FILE NÀY */
+
 .contact-section {
-  min-height: 50vh; /* Không cần full 100vh */
+  min-height: 100vh;
   text-align: center;
-  background: var(--color-dark-primary); /* Vùng tối nhất */
-  border-bottom: none; /* Section cuối cùng */
+  background: var(--color-dark-primary);
+  border-bottom: none;
+  display: flex;
+  align-items: center;
 }
 
 .contact-container {
-  max-width: 800px;
+  /* "làm cho nó rộng hơn" */
+  max-width: 1400px; /* Tăng độ rộng */
+  width: 100%; /* Đảm bảo chiếm đủ không gian */
+  margin: 0 auto;
+  padding: 0 40px; /* Thêm padding 2 bên */
+}
+
+.contact-container h2 {
+  margin-bottom: 20px;
 }
 
 .contact-container p {
   font-size: 1.2rem;
   color: var(--color-text-secondary);
-  margin-bottom: 40px;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
   margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.social-icons a {
-  font-size: 3.5rem;
+/* === BỐ CỤC 2 CỘT (ĐÃ SỬA) === */
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 50px;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+/* Cột 1: Thông tin */
+.contact-info {
+  flex: 1; /* Cân bằng 2 cột */
+  flex-basis: 450px; /* Chiều rộng cơ sở (rộng hơn) */
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+/* Cột 2: Form */
+.contact-form-container {
+  flex: 1; /* Cân bằng 2 cột */
+  flex-basis: 450px; /* Chiều rộng cơ sở (rộng hơn) */
+  min-width: 300px;
+  background: var(--color-dark-secondary);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+/* === HẾT SỬA BỐ CỤC === */
+
+
+.contact-info-item {
+  background: var(--color-dark-secondary);
+  padding: 25px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center; 
+  gap: 20px;
+}
+
+.contact-info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--color-red-accent);
+}
+
+.contact-info-icon {
+  font-size: 2.5rem;
+  color: var(--color-red-accent);
+  flex-shrink: 0; /* Không cho icon bị co lại */
+}
+
+.contact-info-item h4 {
+  font-size: 1.2rem;
+  color: var(--color-text-primary);
+  margin-bottom: 5px;
+}
+
+.contact-info-item a {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  
+  /* === SỬA LỖI EMAIL BỊ "CẤN" === */
+  white-space: nowrap; /* Ngăn xuống dòng */
+  overflow: hidden; /* Ẩn phần thừa */
+  text-overflow: ellipsis; /* Hiển thị ... */
+}
+.contact-info-item a:hover {
+  color: var(--color-red-accent);
+}
+
+/* Social icons (dọc) */
+.social-icons-vertical {
+  display: flex;
+  
+  /* === SỬA LỖI "CĂN GIỮA" === */
+  justify-content: center; /* Đổi từ flex-start sang center */
+  
+  gap: 40px; /* Tăng khoảng cách */
+  padding: 20px 0;
+  border-top: 1px solid #333; /* Thêm đường kẻ ngăn cách */
+  margin-top: 10px;
+}
+
+.social-icons-vertical a {
+  font-size: 2.5rem; 
   color: var(--color-text-primary);
   transition: color 0.3s ease;
+}
+
+.contact-form-container h3 {
+  font-size: 2rem;
+  color: var(--color-text-primary);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px 0;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #555;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-bottom-color: var(--color-red-accent);
+}
+
+.form-label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  top: -10px;
+  font-size: 0.8rem;
+  color: var(--color-red-accent);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-button {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  background-color: var(--color-red-accent);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #fff;
+  color: var(--color-red-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submit-button.loading {
+  background-color: #555;
+}
+
+.submit-button.success {
+  background-color: #28a745;
+}
+
+.submit-button.error {
+  background-color: #a72828;
+}
+
+.send-icon {
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover .send-icon {
+  transform: translateX(5px);
 }
 
 .footer-text {

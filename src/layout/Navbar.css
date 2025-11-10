@@ -1,0 +1,177 @@
+/* THAY THẾ TOÀN BỘ FILE NÀY */
+
+.navbar {
+  background: transparent;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: fixed; /* Dính trên cùng */
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi cuộn */
+.navbar.scrolled {
+  background-color: var(--color-dark-primary);
+  border-bottom: 1px solid var(--color-red-accent);
+}
+
+/* === SỬA LỖI VỠ HÀNG TẠI ĐÂY === */
+.navbar-container {
+  display: flex;
+  justify-content: space-between; /* Đẩy logo và menu ra 2 bên */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  flex-wrap: nowrap; /* QUAN TRỌNG: Không cho rớt hàng */
+  
+  /* "Làm cho cột navbar dài ra" */
+  max-width: 1600px; /* Tăng độ rộng tối đa */
+  padding: 0 40px; /* Giảm padding hai bên */
+}
+/* === HẾT SỬA LỖI === */
+
+
+.navbar-logo {
+  color: var(--color-red-accent);
+  justify-self: flex-start;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  flex-shrink: 0; /* Không co logo */
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  flex-shrink: 0; /* Không co menu */
+}
+
+.nav-item {
+  height: 80px;
+  display: flex; /* Đảm bảo các item con được căn giữa */
+  align-items: center;
+}
+
+.nav-links {
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap; /* Không ngắt chữ trong link */
+}
+
+/* Hiệu ứng gạch chân đỏ khi hover */
+.nav-links::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: var(--color-red-accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links:hover {
+  color: var(--color-red-accent);
+}
+
+.nav-links:hover::after {
+  transform: scaleX(1);
+}
+
+/* Container cho công tắc */
+.lang-switch-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+/* Chữ "VI" và "EN" */
+.lang-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease;
+}
+
+/* Chữ được chọn sẽ sáng lên */
+.lang-label.active {
+  color: var(--color-red-accent);
+}
+
+/* Thân của công tắc */
+.lang-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+/* Ẩn checkbox HTML mặc định */
+.lang-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Thanh trượt (slider) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  transition: .4s;
+}
+
+/* Nút tròn bên trong */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+/* Bo tròn */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Khi được gạt (checked), đổi nền sang màu đỏ */
+input:checked + .slider {
+  background-color: var(--color-red-accent);
+}
+
+/* Khi được gạt, di chuyển nút tròn */
+input:checked + .slider:before {
+  transform: translateX(20px);
+}

@@ -1,20 +1,32 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './layout/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
+import Introduction from './components/Introduction';
+import WhatIDo from './components/WhatIDo';
+import WhatIDone from './components/WhatIDone';
+import WhatIWillDo from './components/WhatIWillDo';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
 import Contact from './components/Contact';
+import ParticlesBackground from './layout/ParticlesBackground';
 
-// Hàm chính render toàn bộ trang web
+// ĐÃ XÓA: Preloader, AppCursor, AnimatePresence
+
 function App() {
+  // ĐÃ XÓA: State isLoading và useEffect
+  
   return (
     <div>
+      {/* ĐÃ XÓA: AppCursor */}
+      <ParticlesBackground />
+      
+      {/* ĐÃ XÓA: Logic AnimatePresence và isLoading */}
       <Navbar />
       <Hero />
-      <About />
+      <Introduction />
+      <WhatIDo />
+      <WhatIDone />
+      <WhatIWillDo />
       <Skills />
-      <Projects />
       <Contact />
     </div>
   );

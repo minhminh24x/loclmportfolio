@@ -53,11 +53,26 @@ h1 {
   font-weight: 900;
 }
 
+/* Sửa đổi h2 */
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem; /* Cho to rõ hơn */
   font-weight: 700;
-  color: var(--color-red-accent); /* Tiêu đề màu đỏ */
+  color: var(--color-red-accent);
   text-align: center;
+  text-transform: uppercase; /* In hoa */
+  letter-spacing: 1.5px; /* Giãn cách chữ */
+  margin-bottom: 10px; /* Giảm margin dưới */
+}
+
+/* Thêm 1 class cho tiêu đề phụ (nếu cần) */
+h2.skills-subtitle {
+  font-size: 2.2rem;
+  color: var(--color-text-primary);
+  margin-top: 80px; 
+  border-top: 1px solid #444;
+  padding-top: 40px;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 h3 {
