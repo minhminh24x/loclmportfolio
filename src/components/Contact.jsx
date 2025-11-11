@@ -40,10 +40,10 @@ function Contact() {
 
     // *** NHỚ THAY THẾ CÁC KHÓA CỦA BẠN VÀO ĐÂY ***
     emailjs.sendForm(
-      'YOUR_SERVICE_ID',  // <-- Sửa thành ID Dịch vụ của bạn
-      'YOUR_TEMPLATE_ID', // <-- Sửa thành ID Template của bạn
+      'service_rklw2vm',  // <-- Sửa thành ID Dịch vụ của bạn
+      'template_mnfe1pi', // <-- Sửa thành ID Template của bạn
       form.current, 
-      'YOUR_USER_ID'        // <-- Sửa thành Public Key (User ID) của bạn
+      'sB5O2Za4smMuiF5gH'        // <-- Sửa thành Public Key (User ID) của bạn
     )
       .then((result) => {
           console.log(result.text);
