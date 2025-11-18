@@ -28,7 +28,7 @@ export const translations = {
       title: 'Tôi là ai?',
       education: {
         title: 'Học vấn',
-        line1: 'Hiện đang là sinh viên năm 3',
+        line1: 'Hiện đang là sinh viên năm 4',
         line2: 'Ngành: Kỹ thuật Phần mềm',
         line3: 'Tại: Đại học FPT Cần Thơ (2022 - 2026)',
       },
@@ -268,7 +268,7 @@ export const translations = {
       title: 'About Me',
       education: {
         title: 'Education',
-        line1: 'Currently a 3rd-year student',
+        line1: 'Currently a 4rd-year student',
         line2: 'Major: Software Engineering',
         line3: 'At: FPT University, Can Tho (2022 - 2026)',
       },
