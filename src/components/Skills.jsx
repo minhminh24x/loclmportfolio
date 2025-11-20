@@ -1,22 +1,31 @@
+/* THAY THẾ TOÀN BỘ FILE NÀY */
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FaJava, FaReact, FaDocker, FaDatabase, FaDesktop, FaRobot, FaComments, FaUsers, FaTasks
-} from 'react-icons/fa';
+  FaJava, FaReact, FaDocker, FaDatabase, FaDesktop, FaRobot, 
+  FaGitAlt, FaTerminal, FaTasks 
+} from 'react-icons/fa'; // Đã thêm icon mới: Git, Terminal
 import './Skills.css';
 import { useLanguage } from '../context/LanguageContext';
-// ĐÃ XÓA: LogoCube và Suspense
 
 function Skills() {
   const { language, translations } = useLanguage();
   const t = translations[language].skills;
+  
   const hardSkills = t.hardSkills;
-  const softSkills = t.softSkills;
+  
+  // === KHẮC PHỤC LỖI TẠI ĐÂY ===
+  // Code cũ gọi t.softSkills -> Code mới gọi t.tools
+  // Thêm "|| []" để nếu dữ liệu chưa kịp tải thì không bị crash
+  const tools = t.tools || []; 
 
   const hardSkillIcons = [
     <FaJava />, <FaReact />, <FaDatabase />, <FaDocker />, <FaDesktop />, <FaRobot />
   ];
-  const softSkillIcons = [<FaUsers />, <FaComments />, <FaTasks />];
+
+  // Bộ icon mới khớp với 3 mục: Version Control, Tools, Workflow
+  const toolIcons = [<FaGitAlt />, <FaTerminal />, <FaTasks />];
 
   // Hiệu ứng cho TOÀN BỘ SECTION
   const sectionVariants = {
@@ -28,14 +37,13 @@ function Skills() {
     }
   };
 
-  // Hiệu ứng cho card con (vẫn giữ lại)
+  // Hiệu ứng cho card con
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1 }
   };
 
   return (
-    // "Nguyên 1 phần" trượt vào đây
     <motion.section 
       id="skills" 
       className="section"
@@ -48,9 +56,8 @@ function Skills() {
         
         {/* Kỹ năng cứng */}
         <motion.div 
-          // Hiệu ứng Stagger (xuất hiện lần lượt) cho các card con
           transition={{ staggerChildren: 0.1 }}
-          initial="hidden" // Đặt lại initial/animate cho card con
+          initial="hidden" 
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
@@ -70,14 +77,11 @@ function Skills() {
           </div>
         </motion.div>
 
-        {/* Cột 3D đã bị XÓA */}
-
       </div>
       
-      {/* Kỹ năng mềm (vẫn ở dưới) */}
+      {/* === PHẦN MỚI: Tools & Workflow (Thay cho Soft Skills cũ) === */}
       <div className="container">
         <motion.div
-            // Hiệu ứng Stagger
             transition={{ staggerChildren: 0.1 }}
             initial="hidden"
             whileInView="visible"
@@ -85,15 +89,16 @@ function Skills() {
           >
             <h2 className="skills-subtitle">{t.subtitle}</h2>
             <div className="skills-grid soft-skills-grid">
-              {softSkills.map((skill, index) => (
+              {/* Lặp qua mảng 'tools' thay vì 'softSkills' */}
+              {tools.map((item, index) => (
                 <motion.div 
                   key={index} 
                   className="skill-card soft-skill-card"
                   variants={cardVariants}
                 >
-                  <div className="skill-icon">{softSkillIcons[index]}</div>
-                  <h3>{skill.name}</h3>
-                  <p>{skill.desc}</p>
+                  <div className="skill-icon">{toolIcons[index]}</div>
+                  <h3>{item.name}</h3>
+                  <p>{item.desc}</p>
                 </motion.div>
               ))}
             </div>

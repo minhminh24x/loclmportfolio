@@ -29,6 +29,9 @@ function Navbar() {
             <a href="#introduction" className="nav-links">{navT.intro}</a>
           </li>
           <li className="nav-item">
+            <a href="#timeline" className="nav-links">{navT.timeline}</a>
+          </li>
+          <li className="nav-item">
             <a href="#what-i-do" className="nav-links">{navT.whatIDo}</a>
           </li>
           <li className="nav-item">
@@ -48,17 +51,17 @@ function Navbar() {
           <li className="nav-item lang-switch-container">
             <span className={`lang-label ${language === 'vi' ? 'active' : ''}`}>VI</span>
             <label className="lang-switch">
-              <input 
-                type="checkbox" 
-                checked={language === 'en'} 
-                onChange={toggleLanguage} 
+              <input
+                type="checkbox"
+                checked={language === 'en'}
+                onChange={toggleLanguage}
               />
               <span className="slider round"></span>
             </label>
             <span className={`lang-label ${language === 'en' ? 'active' : ''}`}>EN</span>
           </li>
           {/* === HẾT NÚT GẠT MỚI === */}
-          
+
         </ul>
       </div>
     </nav>

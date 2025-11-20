@@ -1,0 +1,55 @@
+.timeline-section {
+  background: var(--color-dark-secondary); /* Nền xen kẽ với Intro và WhatIDo */
+}
+
+.timeline-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 50px auto 0;
+  padding-left: 30px;
+  border-left: 3px solid #333;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 30px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Dấu chấm trên trục thời gian */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -39px; /* Căn chỉnh với border cha */
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: var(--color-red-accent);
+  border-radius: 50%;
+  border: 4px solid var(--color-dark-secondary); /* Tạo viền giả */
+  box-shadow: 0 0 10px var(--color-red-accent);
+}
+
+.timeline-year {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-red-accent);
+  margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  color: var(--color-text-primary);
+  margin-bottom: 5px;
+  text-align: left; /* Reset căn giữa của thẻ h2 chung */
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  text-align: left;
+}
