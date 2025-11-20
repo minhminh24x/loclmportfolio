@@ -23,6 +23,7 @@ export const translations = {
       ],
       quote: '“Code không chỉ chạy được, mà còn phải bảo mật, tối ưu và dễ bảo trì.”',
       cta: 'Xem năng lực thực chiến',
+      downloadCV: 'Tải CV của tôi',
     },
     introduction: {
       title: 'Tổng quan năng lực',
@@ -115,25 +116,41 @@ export const translations = {
         myRole: 'Vai trò & Tech Stack',
       },
       projects: [
-        {
+       {
           title: "Portfolio (This Site)",
-          summary: "Trang web bạn đang xem. Tối ưu hiệu năng React, tích hợp đa ngôn ngữ Context API, xử lý form không cần Backend server (EmailJS).",
+          summary: "Trang web bạn đang xem. Tối ưu hiệu năng React, tích hợp đa ngôn ngữ Context API.",
+          longDescription: "Đây không chỉ là một trang tĩnh. Tôi đã xây dựng nó như một ứng dụng React hoàn chỉnh với tư duy về Performance và Scalability. Thách thức lớn nhất là xử lý Multi-language mà không làm trang bị giật (flicker), và tích hợp EmailJS để gửi form không cần Backend server riêng.",
+          features: [
+            "Tối ưu render với React.lazy và Suspense.",
+            "Quản lý Global State cho ngôn ngữ bằng Context API.",
+            "Animation mượt mà đạt 60FPS với Framer Motion."
+          ],
           teamSize: "2 Thành viên (Developer & AI Assistant)",
           myRole: "Frontend & Deployment",
-          tech: ["React", "Vite", "Framer Motion", "react-tsparticles", "EmailJS"],
-          link: "https://github.com/minhminh24x/loclmportfolio"
+          tech: ["React", "Vite", "Framer Motion", "EmailJS"],
+          link: "https://github.com/minhminh24x/loclmportfolio",
+          demoLink: "https://loclmportfolio.vercel.app/" // <--- THÊM LINK DEMO (Thay bằng link thật của bạn)
         },
         {
           title: "Tai Loc Shop (E-commerce)",
-          summary: "Hệ thống E-commerce Fullstack. Áp dụng JWT cho Auth, Prisma ORM quản lý DB. Tự xử lý các vấn đề về Transaction và Race Conditions.",
-          teamSize: "Dự án cá nhân (Đang phát triển)",
-          myRole: "Fullstack Developer (Node.js, Express, React, Prisma, Tailwind).",
+          summary: "Hệ thống E-commerce Fullstack. Áp dụng JWT cho Auth, Prisma ORM quản lý DB.",
+          longDescription: "Một hệ thống thương mại điện tử đầy đủ chức năng. Tôi tập trung giải quyết vấn đề 'Race Condition' khi đặt hàng và quản lý phiên đăng nhập an toàn với JWT (Access Token + Refresh Token). Database được thiết kế chuẩn hóa để truy vấn nhanh.",
+          features: [
+            "Authentication bảo mật 2 lớp (JWT).",
+            "Giỏ hàng đồng bộ Real-time.",
+            "Admin Dashboard thống kê doanh thu."
+          ],
+          teamSize: "Dự án cá nhân",
+          myRole: "Fullstack Developer",
           tech: ["React", "Node.js", "Express", "Prisma", "TailwindCSS"],
-          link: "https://github.com/minhminh24x/tailocshop"
+          link: "https://github.com/minhminh24x/tailocshop",
+          demoLink: "https://tailocshop.vercel.app/" 
         },
         {
           title: "Medical Record System",
           summary: "Hệ thống quản lý bệnh án (FPT Software Internship). Xử lý bảo mật API với Spring Security, phân quyền Role-based chặt chẽ.",
+          longDescription: "Hệ thống quản lý quy mô lớn tại doanh nghiệp. Tôi chịu trách nhiệm module bảo mật, đảm bảo dữ liệu bệnh nhân không bị truy cập trái phép bằng Spring Security và phân quyền Role-based chặt chẽ.",
+          features: ["Spring Security Custom Filter Chain.", "Mã hóa dữ liệu nhạy cảm.", "RESTful API chuẩn Level 2."],
           teamSize: "6 thành viên",
           myRole: "Backend Developer (Spring Boot, PostgreSQL, JWT).",
           tech: ["Spring Boot", "PostgreSQL", "JWT"],
@@ -323,6 +340,7 @@ export const translations = {
       ],
       quote: '“Code works is not enough. It must be secure, optimized, and maintainable.”',
       cta: 'View Real-world Skills',
+      downloadCV: 'Download Resume',
     },
     introduction: {
       title: 'Competency Overview',
@@ -406,23 +424,43 @@ export const translations = {
       projects: [
         {
           title: "Portfolio (This Site)",
-          summary: "Personal showcase. React performance optimization, Context API for I18n, Serverless form handling.",
+          summary: "Personal showcase. React performance optimization, Context API for I18n.",
+          // === PHẦN TIẾNG ANH MỚI ===
+          longDescription: "This is not just a static site. I built it as a full-featured React application with a mindset on Performance and Scalability. The biggest challenge was handling Multi-language support without flickering, and integrating EmailJS for serverless form handling.",
+          features: [
+            "Optimized rendering with React.lazy and Suspense.",
+            "Global State Management for language via Context API.",
+            "Smooth animations hitting 60FPS with Framer Motion."
+          ],
+          // ==========================
           teamSize: "2 Members (Developer & AI Assistant)",
           myRole: "Frontend & Deployment",
-          tech: ["React", "Vite", "Framer Motion", "react-tsparticles", "EmailJS"],
-          link: "https://github.com/minhminh24x/loclmportfolio"
+          tech: ["React", "Vite", "Framer Motion", "EmailJS"],
+          link: "https://github.com/minhminh24x/loclmportfolio",
+          demoLink: "https://loclmportfolio.vercel.app/" // <--- Link giống bên vi
         },
         {
           title: "Tai Loc Shop (E-commerce)",
-          summary: "Fullstack E-commerce. Applied JWT for Auth, Prisma ORM. Handled Transactions and Race Conditions manually.",
+          summary: "Fullstack E-commerce. Applied JWT for Auth, Prisma ORM. Handled Transactions manually.",
+          // === PHẦN TIẾNG ANH MỚI ===
+          longDescription: "A fully functional e-commerce system. I focused on solving 'Race Conditions' in order placement and secure session management using JWT (Access Token + Refresh Token). The database is normalized for fast queries.",
+          features: [
+            "Two-layer Security Authentication (JWT).",
+            "Real-time Cart Synchronization.",
+            "Admin Dashboard for revenue statistics."
+          ],
+          // ==========================
           teamSize: "Personal",
-          myRole: "Fullstack (Node.js, Express, React, Prisma, Tailwind).",
+          myRole: "Fullstack (Node.js, Express, React, Prisma).",
           tech: ["React", "Node.js", "Express", "Prisma", "TailwindCSS"],
-          link: "https://github.com/minhminh24x/tailocshop"
+          link: "https://github.com/minhminh24x/tailocshop",
+          demoLink: "https://tailocshop.vercel.app/"
         },
         {
           title: "Medical Record System",
           summary: "Patient Management (FPT Software Internship). API Security with Spring Security, strict Role-based Access Control.",
+          longDescription: "Large-scale management system at the enterprise level. I was responsible for the security module, ensuring patient data integrity using Spring Security and strict Role-based Access Control.",
+          features: ["Spring Security Custom Filter Chain.", "Sensitive Data Encryption.", "Standard Level 2 RESTful API."],
           teamSize: "6 Members",
           myRole: "Backend Dev (Spring Boot, PostgreSQL, JWT).",
           tech: ["Spring Boot", "PostgreSQL", "Security"],
@@ -560,7 +598,7 @@ export const translations = {
           "Strong Debugging Mindset."
         ]
       },
-       softSkills: [
+      softSkills: [
         { name: "Teamwork & Communication", desc: "Open, strong presentation skills, and effective information conveyance." },
         { name: "Comprehension & Analysis", desc: "Proficient in reading English documents, task analysis, and organization." },
         { name: "Personal Attributes", desc: "Hard-working, patient, responsible, and performs well under pressure." }

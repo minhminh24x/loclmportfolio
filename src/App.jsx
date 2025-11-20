@@ -1,30 +1,62 @@
-/* THAY THẾ TOÀN BỘ FILE NÀY */
-
-import React from 'react';
+import React, { Suspense, lazy, useEffect } from 'react'; // Import Suspense và lazy
 import Navbar from './layout/Navbar';
 import Hero from './components/Hero';
-import Introduction from './components/Introduction';
-import Timeline from './components/Timeline'; // <-- Import mới
-import WhatIDo from './components/WhatIDo';
-import WhatIDone from './components/WhatIDone';
-import WhatIWillDo from './components/WhatIWillDo';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
 import ParticlesBackground from './layout/ParticlesBackground';
+import BackToTop from './components/BackToTop';
+import { useLanguage } from './context/LanguageContext';
+
+// Lazy load các component nặng phía dưới
+const Introduction = lazy(() => import('./components/Introduction'));
+const Timeline = lazy(() => import('./components/Timeline'));
+const WhatIDo = lazy(() => import('./components/WhatIDo'));
+const WhatIDone = lazy(() => import('./components/WhatIDone'));
+const WhatIWillDo = lazy(() => import('./components/WhatIWillDo'));
+const Skills = lazy(() => import('./components/Skills'));
+const Contact = lazy(() => import('./components/Contact'));
+
+// Component hiển thị khi đang tải (Loading Spinner đơn giản)
+const LoadingFallback = () => (
+  <div style={{
+    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#DC143C',
+    fontSize: '1.5rem'
+  }}>
+    Loading...
+  </div>
+);
 
 function App() {
+  const { language } = useLanguage();
+
+  // === THÊM: Hiệu ứng đổi tiêu đề tab trình duyệt ===
+  useEffect(() => {
+    if (language === 'vi') {
+      document.title = "Lê Minh Lộc | Backend Developer";
+    } else {
+      document.title = "Le Minh Loc | Backend Developer";
+    }
+  }, [language]);
   return (
     <div>
       <ParticlesBackground />
       <Navbar />
       <Hero />
-      <Introduction />
-      <Timeline /> {/* <-- Vị trí mới: Sau Intro để kể chuyện lịch sử */}
-      <WhatIDo />
-      <WhatIDone />
-      <WhatIWillDo />
-      <Skills />
-      <Contact />
+
+      {/* Bọc các component lazy trong Suspense */}
+      <Suspense fallback={<LoadingFallback />}>
+        <Introduction />
+        <Timeline />
+        <WhatIDo />
+        <WhatIDone />
+        <WhatIWillDo />
+        <Skills />
+        <Contact />
+      </Suspense>
+      <BackToTop />
+
     </div>
   );
 }

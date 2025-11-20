@@ -1,8 +1,7 @@
-/* THAY THẾ TOÀN BỘ FILE NÀY */
-
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
+import { FaDownload, FaArrowRight } from 'react-icons/fa'; // Import icon mới
 import './Hero.css';
 import avatar from '../assets/avatar.png';
 import { useLanguage } from '../context/LanguageContext';
@@ -13,17 +12,8 @@ function Hero() {
 
   return (
     <section id="home" className="section hero-section">
-
-      {/* === SỬA LỖI NỀN BỊ MỜ === */}
-      {/* * Hiệu ứng nền được đưa ra ngoài, 
-        * làm SIBLING (anh em) với hero-container.
-        * Nó sẽ có z-index: 1 
-      */}
       <div className="hero-background-gradient"></div>
 
-      {/* * Container chứa nội dung sẽ có z-index: 2
-        * và nằm TRÊN lớp nền.
-      */}
       <div className="hero-container">
         
         {/* Cột 1: Text */}
@@ -49,9 +39,18 @@ function Hero() {
           <p className="hero-quote">
             {heroT.quote}
           </p>
-          <a href="#what-i-done" className="hero-cta-button">
-            {heroT.cta}
-          </a>
+          
+          {/* === SỬA ĐỔI: Group Button === */}
+          <div className="hero-buttons">
+            <a href="#what-i-done" className="hero-cta-button primary">
+              {heroT.cta} <FaArrowRight className="btn-icon" />
+            </a>
+            {/* Link này trỏ đến file cv.pdf trong thư mục public */}
+            <a href="/cv.pdf" download className="hero-cta-button outline">
+              {heroT.downloadCV} <FaDownload className="btn-icon" />
+            </a>
+          </div>
+
         </motion.div>
 
         {/* Cột 2: Avatar */}
@@ -64,8 +63,6 @@ function Hero() {
           <img src={avatar} alt="Lê Minh Lộc" />
         </motion.div>
       </div>
-      {/* === HẾT SỬA LỖI === */}
-
     </section>
   );
 }

@@ -1,0 +1,185 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Nền tối làm nổi bật modal */
+  z-index: 2000; /* Cao hơn cả Navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  backdrop-filter: blur(5px); /* Hiệu ứng mờ nền đằng sau */
+}
+
+.modal-content {
+  background: var(--color-dark-secondary);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh; /* Không được cao quá màn hình */
+  border-radius: 15px;
+  border: 1px solid var(--color-red-accent);
+  position: relative;
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung dài */
+  box-shadow: 0 0 30px rgba(220, 20, 60, 0.3);
+}
+
+/* Thanh cuộn tùy chỉnh cho Modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--color-red-accent);
+  border-radius: 4px;
+}
+
+.modal-header {
+  position: relative;
+  padding: 0;
+}
+
+/* Placeholder cho ảnh cover (sau này bạn thay bằng ảnh thật) */
+.modal-cover-placeholder {
+  height: 200px;
+  background: linear-gradient(135deg, #333 0%, var(--color-dark-primary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-size: 3rem;
+  border-bottom: 1px solid #444;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.close-button:hover {
+  background: var(--color-red-accent);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-body h2 {
+  font-size: 2rem;
+  color: var(--color-red-accent);
+  margin-bottom: 20px;
+  text-align: left; /* Căn trái cho dễ đọc */
+}
+
+.modal-section {
+  margin-bottom: 25px;
+}
+
+.modal-section h4 {
+  font-size: 1.2rem;
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-desc {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+.modal-features {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-features li {
+  margin-bottom: 10px;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.feature-icon {
+  color: var(--color-red-accent);
+  margin-top: 4px;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-tag {
+  background: rgba(220, 20, 60, 0.1);
+  color: var(--color-red-accent);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(220, 20, 60, 0.3);
+}
+
+.modal-footer {
+  padding: 20px 30px;
+  border-top: 1px solid #333;
+  display: flex; /* Đổi sang flex để căn chỉnh nút dễ hơn */
+  justify-content: flex-end;
+  gap: 15px; /* Khoảng cách giữa 2 nút */
+}
+
+.modal-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Style cho nút GitHub (giữ màu đỏ chủ đạo) */
+.modal-link-btn.github {
+  background: var(--color-dark-primary);
+  color: var(--color-text-primary);
+  border: 1px solid #444;
+}
+
+.modal-link-btn.github:hover {
+  background: #333;
+  border-color: var(--color-text-primary);
+}
+
+/* Style cho nút Live Demo (Màu đỏ nổi bật) */
+.modal-link-btn.demo {
+  background: var(--color-red-accent);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+}
+
+.modal-link-btn.demo:hover {
+  background: white;
+  color: var(--color-red-accent);
+  transform: translateY(-2px);
+}

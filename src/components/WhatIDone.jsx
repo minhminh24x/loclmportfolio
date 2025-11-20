@@ -1,32 +1,43 @@
-/* THAY THẾ TOÀN BỘ FILE NÀY */
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaAward, FaUsers, FaInfoCircle, FaUserFriends, FaLaptopCode, FaExternalLinkAlt } from 'react-icons/fa'; // Thêm icon
+// Thêm import ProjectModal
+import ProjectModal from './ProjectModal';
+import { FaGithub, FaAward, FaUsers, FaInfoCircle, FaUserFriends, FaLaptopCode, FaExternalLinkAlt } from 'react-icons/fa';
 import './WhatIDone.css';
 import { useLanguage } from '../context/LanguageContext';
 
 function WhatIDone() {
   const [activeTab, setActiveTab] = useState('projects');
+  
+  // === THÊM STATE CHO MODAL ===
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const { language, translations } = useLanguage();
   const t = translations[language].whatIDone;
-
+  
   const projects = t.projects;
   const certifications = t.certifications;
   const activities = t.activities;
-  const badges = t.badges; // Lấy data badges
+  const badges = t.badges;
 
-  // Hiệu ứng cho TOÀN BỘ SECTION
-  const sectionVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { type: 'spring', stiffness: 50, duration: 0.8 }
-    }
+  // Hàm mở modal
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
   };
 
-  // Hiệu ứng cho NỘI DUNG TAB
+  // Hàm đóng modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300); // Đợi animation đóng xong mới clear data
+  };
+
+  // ... (Giữ nguyên các biến variants)
+  const sectionVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 50, duration: 0.8 } }
+  };
   const tabContentVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -45,7 +56,7 @@ function WhatIDone() {
       <div className="container">
         <h2>{t.title}</h2>
         
-        {/* Thanh điều hướng Tab */}
+        {/* ... (Giữ nguyên phần Tab Navigation) ... */}
         <div className="tab-navigation">
           <button 
             className={`tab-button ${activeTab === 'projects' ? 'active' : ''}`}
@@ -67,7 +78,6 @@ function WhatIDone() {
           </button>
         </div>
 
-        {/* Nội dung Tab */}
         <div className="tab-content">
           <AnimatePresence mode="wait">
             {/* Tab Dự án */}
@@ -81,109 +91,74 @@ function WhatIDone() {
                 className="projects-container"
               >
                 {projects.map((project, index) => (
-                  <div key={index} className="project-entry"> 
+                  // === SỬA ĐỔI: Thêm onClick để mở Modal ===
+                  <div 
+                    key={index} 
+                    className="project-entry clickable-project" // Thêm class để CSS cursor pointer
+                    onClick={() => openModal(project)}
+                  > 
                     <h3>{project.title}</h3>
                     <ul className="project-tech-list">
-                      {project.tech.map((techItem, i) => <li key={i}>{techItem}</li>)}
+                      {/* Chỉ hiện tối đa 4 công nghệ để gọn */}
+                      {project.tech.slice(0, 4).map((techItem, i) => <li key={i}>{techItem}</li>)}
+                      {project.tech.length > 4 && <li>+{project.tech.length - 4}</li>}
                     </ul>
+                    
                     <div className="project-details">
                       <div className="detail-item">
                         <FaInfoCircle className="detail-icon" />
                         <div>
                           <h4>{t.detailLabels.summary}</h4>
-                          <p>{project.summary}</p>
+                          {/* Cắt bớt text nếu quá dài */}
+                          <p className="line-clamp-2">{project.summary}</p>
                         </div>
                       </div>
-                      <div className="detail-item">
+                      {/* Ẩn bớt các chi tiết Team/Role ở đây cho gọn, 
+                        để dành hiển thị trong Modal hoặc giữ nguyên tùy bạn. 
+                        Ở đây tôi giữ nguyên nhưng bạn có thể bỏ bớt.
+                      */}
+                       <div className="detail-item">
                         <FaUserFriends className="detail-icon" />
                         <div>
                           <h4>{t.detailLabels.teamSize}</h4>
                           <p>{project.teamSize}</p>
                         </div>
                       </div>
-                      <div className="detail-item">
-                        <FaLaptopCode className="detail-icon" />
-                        <div>
-                          <h4>{t.detailLabels.myRole}</h4>
-                          <p>{project.myRole}</p>
-                        </div>
-                      </div>
                     </div>
-                    {project.link && (
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-github-link">
-                        <FaGithub /> {t.githubLink}
-                      </a>
-                    )}
+                    
+                    <div className="click-hint">
+                      (Nhấn để xem chi tiết)
+                    </div>
                   </div>
                 ))}
               </motion.div>
             )}
 
-            {/* === TAB CHỨNG CHỈ (ĐÃ CẬP NHẬT) === */}
-            {activeTab === 'certs' && (
-              <motion.div
-                key="certs"
-                variants={tabContentVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                {/* Lưới chứng chỉ */}
+            {/* ... (Giữ nguyên Tab Certs và Activities) ... */}
+             {activeTab === 'certs' && (
+              <motion.div key="certs" variants={tabContentVariants} initial="hidden" animate="visible" exit="exit">
                 <div className="certs-grid">
                   {certifications.map((cert, index) => (
-                    // Thẻ <a> bọc bên ngoài
-                    <motion.a 
-                      key={index} 
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cert-card" // Dùng class cũ
-                      whileHover={{ scale: 1.03, y: -5 }}
-                      // Thêm hiệu ứng xuất hiện
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                    >
+                    <motion.a key={index} href={cert.link} target="_blank" rel="noopener noreferrer" className="cert-card" whileHover={{ scale: 1.03, y: -5 }} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1 }}>
                       <FaAward className="cert-icon" />
                       <div className="cert-info">
                         <h4>{cert.title}</h4>
                         <p>{cert.from} - <span>{cert.date}</span></p>
-                        {/* Chú thích ngắn gọn (MỚI) */}
                         <p className="cert-desc">{cert.desc}</p>
                       </div>
                     </motion.a>
                   ))}
                 </div>
-
-                {/* Mục Huy hiệu (MỚI) */}
-                <motion.div 
-                  className="badges-section"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: certifications.length * 0.1 }}
-                >
+                <motion.div className="badges-section" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: certifications.length * 0.1 }}>
                   <h3>{badges.title}</h3>
                   <p>{badges.desc}</p>
-                  <a href={badges.link} className="badge-link-button" target="_blank" rel="noopener noreferrer">
-                    {badges.cta} <FaExternalLinkAlt />
-                  </a>
+                  <a href={badges.link} className="badge-link-button" target="_blank" rel="noopener noreferrer">{badges.cta} <FaExternalLinkAlt /></a>
                 </motion.div>
-
               </motion.div>
             )}
-            {/* === HẾT TAB CHỨNG CHỈ === */}
 
-
-            {/* Tab Hoạt động */}
             {activeTab === 'activities' && (
-              <motion.div
-                key="activities"
-                variants={tabContentVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                className="activities-grid"
-              >
+              <motion.div key="activities" variants={tabContentVariants} initial="hidden" animate="visible" exit="exit" className="activities-grid">
                 {activities.map((activity, index) => (
                   <div key={index} className="activity-card">
                     <h4>{activity.title}</h4>
@@ -196,6 +171,14 @@ function WhatIDone() {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* === ĐẶT MODAL Ở ĐÂY === */}
+      <ProjectModal 
+        isOpen={isModalOpen} 
+        onClose={closeModal} 
+        project={selectedProject} 
+      />
+
     </motion.section>
   );
 }

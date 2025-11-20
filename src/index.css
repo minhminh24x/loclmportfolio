@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
 
 :root {
-  /* Theme Đen-Đỏ */
-  --color-dark-primary: #121212; /* Màu đen tuyền (vùng tối) */
-  --color-dark-secondary: #1e1e1e; /* Màu đen xám (vùng sáng hơn) */
-  --color-red-accent: #DC143C; /* Màu đỏ (Crimson) */
+  /* Thay đổi từ mã HEX đặc sang RGBA có độ trong suốt */
+  --color-dark-primary: rgba(18, 18, 18, 0.85); /* Độ mờ 85% để lộ hạt */
+  --color-dark-secondary: rgba(30, 30, 30, 0.85);
+  --color-red-accent: #DC143C;
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #b3b3b3;
 }
@@ -36,11 +36,11 @@ body {
 
 /* Vùng sáng / tối xen kẽ */
 .section:nth-child(odd) {
-  background-color: var(--color-dark-primary); /* Vùng tối */
+  background-color: var(--color-dark-primary);
 }
 
 .section:nth-child(even) {
-  background-color: var(--color-dark-secondary); /* Vùng sáng (xám) */
+  background-color: var(--color-dark-secondary);
 }
 
 h1, h2, h3 {
@@ -100,4 +100,26 @@ a:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Đường rãnh (Track) - Màu nền tối */
+::-webkit-scrollbar-track {
+  background: var(--color-dark-primary); 
+  border-left: 1px solid #333;
+}
+
+/* Tay nắm (Thumb) - Màu đỏ */
+::-webkit-scrollbar-thumb {
+  background: var(--color-red-accent); 
+  border-radius: 5px;
+  border: 2px solid var(--color-dark-primary); /* Tạo viền giả để thumb trông nhỏ hơn */
+}
+
+/* Hiệu ứng khi di chuột vào tay nắm */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff3355; /* Đỏ sáng hơn */
 }
