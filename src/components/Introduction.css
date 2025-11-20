@@ -1,46 +1,104 @@
-/* THÊM VÀO CUỐI FILE */
+/* src/components/Introduction.css */
 
-.highlights-box {
-  background: rgba(220, 20, 60, 0.05); /* Đỏ rất nhạt */
-  border: 1px solid var(--color-red-accent);
-  border-radius: 10px;
-  padding: 30px;
-  margin-bottom: 40px;
-  text-align: left;
+.intro-grid {
+  display: grid;
+  /* Tự động chia cột: Trên desktop là 3 cột, mobile là 1 cột */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
 }
 
-.highlights-box h3 {
+.intro-card {
+  background: var(--color-dark-secondary); /* Nền xám đậm nổi trên nền đen */
+  padding: 40px 30px;
+  border-radius: 15px;
+  border: 1px solid #333; /* Viền mờ mặc định */
+  text-align: center; /* Căn giữa nội dung */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hiệu ứng nảy */
+  position: relative;
+  overflow: hidden;
+  height: 100%; /* Để các thẻ cao bằng nhau */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hiệu ứng khi di chuột vào thẻ */
+.intro-card:hover {
+  transform: translateY(-10px); /* Bay lên nhẹ */
+  border-color: var(--color-red-accent); /* Viền đổi màu đỏ */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
+              0 0 20px rgba(220, 20, 60, 0.2); /* Đổ bóng đỏ mờ */
+}
+
+/* Icon tròn to đẹp */
+.card-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(220, 20, 60, 0.1); /* Nền đỏ rất nhạt */
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+  border: 1px solid rgba(220, 20, 60, 0.3);
+  transition: all 0.3s ease;
+}
+
+.intro-card:hover .card-icon-wrapper {
+  background: var(--color-red-accent);
+  box-shadow: 0 0 15px var(--color-red-accent);
+}
+
+.intro-icon {
+  font-size: 2.5rem;
+  color: var(--color-red-accent);
+  transition: color 0.3s ease;
+}
+
+.intro-card:hover .intro-icon {
+  color: #fff; /* Icon chuyển trắng khi hover */
+}
+
+.intro-card h3 {
+  font-size: 1.5rem;
   margin-bottom: 20px;
-  font-size: 1.6rem;
-  border-bottom: 1px solid #444;
-  padding-bottom: 10px;
-}
-
-.highlight-icon {
-  color: #FFD700; /* Màu vàng cho ngôi sao */
-}
-
-.highlights-box ul {
-  list-style: none;
-  padding: 0;
-}
-
-.highlights-box ul li {
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
   position: relative;
-  padding-left: 25px;
-  margin-bottom: 12px;
-  font-size: 1.1rem;
+  display: inline-block;
+}
+
+/* Gạch chân dưới tiêu đề thẻ */
+.intro-card h3::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: var(--color-red-accent);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Style cho text bên trong */
+.intro-card p {
+  font-size: 1rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
-.highlights-box ul li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--color-red-accent);
+.intro-card p strong {
+  color: #fff;
   font-weight: bold;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
 }
