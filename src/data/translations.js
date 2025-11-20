@@ -1,31 +1,33 @@
+/* src/data/translations.js */
 
 export const translations = {
   vi: {
     navbar: {
-      intro: 'Tôi là ai',
+      intro: 'Tổng quan',
       timeline: 'Lộ trình',
-      whatIDo: 'Đang làm gì',
-      whatIDone: 'Đã làm gì',
-      whatIWillDo: 'Sẽ làm gì',
+      whatIDo: 'Chuyên môn',
+      whatIDone: 'Dự án',
+      whatIWillDo: 'Định hướng',
       skills: 'Kỹ năng',
       contact: 'Liên hệ',
     },
     hero: {
       greeting: '👋 Xin chào, tôi là',
       name: 'Lê Minh Lộc!',
-      subtitle: 'DEVELOPER & TESTER',
+      subtitle: 'BACKEND DEVELOPER & TESTER',
       sequence: [
-        'Backend Developer', 2000,
-        'Web & System Developer', 2000,
-        'Freelance Tester', 2000,
-        'IoT & Game Enthusiast', 2000,
+        'Backend Developer (Java/Spring)', 2000,
+        'System Optimization Enthusiast', 2000,
+        'Freelance Tester (TestIO)', 2000,
+        'IoT & Automation Lover', 2000,
       ],
-      quote: '“Code is the art of turning ideas into reality.”',
-      cta: 'Xem các dự án của tôi',
+      quote: '“Code không chỉ chạy được, mà còn phải bảo mật, tối ưu và dễ bảo trì.”',
+      cta: 'Xem năng lực thực chiến',
     },
     introduction: {
-      title: 'Tôi là ai?',
-      // === ĐÃ KHÔI PHỤC HIGHLIGHTS ===
+      title: 'Tổng quan năng lực',
+
+      // MỤC 1: Điểm nhấn chuyên môn (Professional Highlights)
       highlights: {
         title: 'Điểm nhấn chuyên môn',
         items: [
@@ -36,11 +38,30 @@ export const translations = {
           'AI-Assisted Dev: Sử dụng AI để phân tích log, tạo test case và tối ưu truy vấn SQL phức tạp.'
         ]
       },
+
+      // MỤC 2: Xử lý vấn đề thực tế (Real-World Problem Solving)
+      problemSolving: {
+        title: 'Xử lý vấn đề thực tế',
+        items: [
+          'Sửa lỗi 401 Unauthorized khi tích hợp API với IAM.',
+          'Sửa lỗi 403 Forbidden khi Spring Security chặn role không đúng.',
+          'Khắc phục lỗi 500 Internal Server Error trong các service liên quan đến JWT & UUID.',
+          'Xử lý lỗi Infinity Folder Loop trên Windows khi xoá thư mục bị Recursive Build.',
+          'Debug lỗi SSL, Certpath, database constraint, foreign key, và dead-lock.'
+        ]
+      },
+
+      // MỤC 5: Hợp tác với AI (AI Assisted Development)
+      aiAssisted: {
+        title: 'AI Collaboration',
+        desc: 'Tôi làm việc song song với AI để tăng tốc độ code: từ phân tích log, thiết kế hệ thống, tạo test case, viết docs, đến tối ưu các query phức tạp.'
+      },
+
       education: {
         title: 'Học vấn',
-        line1: 'Hiện đang là sinh viên năm 4',
-        line2: 'Ngành: Kỹ thuật Phần mềm',
-        line3: 'Tại: Đại học FPT Cần Thơ (2022 - 2026)',
+        line1: 'Đại học FPT Cần Thơ (2022 - 2026)',
+        line2: 'Chuyên ngành: Kỹ thuật Phần mềm',
+        line3: 'Định hướng: Backend System & Security',
       },
       goals: {
         title: 'Mục tiêu nghề nghiệp',
@@ -48,12 +69,14 @@ export const translations = {
         line2: 'Dài hạn: Phấn đấu trở thành Team Leader sau 3-4 năm làm việc.',
       },
       values: {
-        title: 'Giá trị cốt lõi',
-        line1: 'Chăm chỉ, kiên nhẫn, có trách nhiệm và làm việc tốt dưới áp lực.',
-        line2: 'Kỹ năng làm việc nhóm, giao tiếp, thuyết trình tốt.',
-        line3: 'Khả năng đọc hiểu tài liệu kỹ thuật tiếng Anh.',
+        title: 'Phong cách làm việc',
+        line1: 'Problem Solver: Tập trung sửa lỗi tận gốc (Root Cause Analysis).',
+        line2: 'Resilience: Kiên nhẫn với các lỗi khó (Legacy code, Config issues).',
+        line3: 'Communication: Trình bày vấn đề kỹ thuật rõ ràng, mạch lạc.',
       },
     },
+
+    // MỤC 7: Tech Stack Timeline (Lộ trình kỹ năng)
     timeline: {
       title: 'Lộ trình phát triển',
       steps: [
@@ -63,145 +86,149 @@ export const translations = {
         { year: '2022', title: 'Foundations', desc: 'Nhập môn lập trình: C++, Java OOP, HTML/CSS cơ bản.' },
       ]
     },
+
     whatIDo: {
-      title: 'Tôi đang làm gì',
+      title: 'Lĩnh vực chuyên môn',
       backend: {
-        title: 'Backend Development',
-        desc: 'Tập trung phát triển kỹ năng Backend chuyên sâu với Java (Spring Boot), JSP/Servlet và các hệ quản trị CSDL như PostgreSQL & SQL Server.',
+        title: 'Backend & Security',
+        desc: 'Xây dựng RESTful API chuẩn mực với Spring Boot. Xử lý Idempotency, Validation, DTO. Tối ưu query SQL Server/PostgreSQL.',
       },
       frontend: {
-        title: 'Frontend & System',
-        desc: 'Học và xây dựng frontend hiện đại với React + Vite. Tìm hiểu về Docker và các giải pháp deploy (Cloudflare Tunnel).',
+        title: 'System & Deploy',
+        desc: 'Triển khai Docker, cấu hình CI/CD cơ bản (GitHub Actions). Hiểu sâu về HTTP Status (401 vs 403, 500).',
       },
       tester: {
-        title: 'Freelance Tester',
-        desc: 'Làm việc tự do trên nền tảng TestIO. Đã đạt Cấp độ 3 (Silver Tester) với tỉ lệ chấp nhận lỗi trên 60%.',
+        title: 'Testing & Debugging',
+        desc: 'Silver Tester trên TestIO. Soi lỗi UI/UX và logic nghiệp vụ. Sử dụng Postman/Swagger thành thạo.',
       },
     },
+
     whatIDone: {
-      title: 'Tôi đã làm gì',
+      title: 'Dự án & Thành tựu',
       tabProjects: 'Dự án',
       tabCerts: 'Chứng chỉ',
       tabActivities: 'Hoạt động',
-      githubLink: 'Xem trên GitHub',
+      githubLink: 'Source Code',
       detailLabels: {
-        summary: 'Tóm tắt',
-        teamSize: 'Quy mô nhóm',
-        myRole: 'Vai trò',
+        summary: 'Mô tả kỹ thuật',
+        teamSize: 'Quy mô',
+        myRole: 'Vai trò & Tech Stack',
       },
       projects: [
-        { 
-          title: "Portfolio Cá Nhân (Trang web này)", 
-          summary: "Chính là trang web bạn đang xem! Một trang portfolio động được xây dựng từ đầu để giới thiệu kỹ năng. Tích hợp đa ngôn ngữ, hiệu ứng 'hạt' (particles) và 'trượt' (scroll reveal).",
+        {
+          title: "Portfolio (This Site)",
+          summary: "Trang web bạn đang xem. Tối ưu hiệu năng React, tích hợp đa ngôn ngữ Context API, xử lý form không cần Backend server (EmailJS).",
           teamSize: "2 Thành viên (Developer & AI Assistant)",
-          myRole: "Developer chính, Thiết kế UI/UX, Tích hợp animation.",
-          tech: ["React", "Vite", "Framer Motion", "react-tsparticles", "EmailJS"], 
-          link: "https://github.com/minhminh24x/loclmportfolio" 
+          myRole: "Frontend & Deployment",
+          tech: ["React", "Vite", "Framer Motion", "react-tsparticles", "EmailJS"],
+          link: "https://github.com/minhminh24x/loclmportfolio"
         },
-        { 
-          title: "Tai Loc Shop (E-commerce)", 
-          summary: "Một nền tảng E-commerce fullstack hiện đại. Backend sử dụng Node.js, Express, Prisma. Frontend sử dụng React và TailwindCSS.",
+        {
+          title: "Tai Loc Shop (E-commerce)",
+          summary: "Hệ thống E-commerce Fullstack. Áp dụng JWT cho Auth, Prisma ORM quản lý DB. Tự xử lý các vấn đề về Transaction và Race Conditions.",
           teamSize: "Dự án cá nhân (Đang phát triển)",
-          myRole: "Fullstack Developer",
-          tech: ["React", "Node.js", "Express", "Prisma", "TailwindCSS"], 
-          link: "https://github.com/minhminh24x/tailocshop" 
+          myRole: "Fullstack Developer (Node.js, Express, React, Prisma, Tailwind).",
+          tech: ["React", "Node.js", "Express", "Prisma", "TailwindCSS"],
+          link: "https://github.com/minhminh24x/tailocshop"
         },
-        { 
-          title: "Medical Record System", 
-          summary: "Hệ thống quản lý hồ sơ bệnh nhân cơ bản. Sử dụng Spring Boot cho backend API và PostgreSQL cho CSDL. Tích hợp JWT để xác thực.",
-          teamSize: "6 thành viên (Làm tại FPT Software)",
-          myRole: "Fullstack Developer",
-          tech: ["Spring Boot", "PostgreSQL", "JWT"], 
+        {
+          title: "Medical Record System",
+          summary: "Hệ thống quản lý bệnh án (FPT Software Internship). Xử lý bảo mật API với Spring Security, phân quyền Role-based chặt chẽ.",
+          teamSize: "6 thành viên",
+          myRole: "Backend Developer (Spring Boot, PostgreSQL, JWT).",
+          tech: ["Spring Boot", "PostgreSQL", "JWT"],
           link: null
         },
-        { 
-          title: "Online Clothing Store (PenguinShop)", 
-          summary: "Web bán hàng MVC (Java EE JSP/Servlet + SQL Server). Tích hợp đầy đủ các tính năng thương mại điện tử như giỏ hàng, voucher, checkout, và xuất Excel thống kê doanh thu.",
-          teamSize: "5 thành viên (Đại học - Dự án nhóm)",
-          myRole: "Backend Developer (Quản lý sản phẩm, Giỏ hàng).",
-          tech: ["Java", "JSP/Servlet", "SQL Server", "MVC"], 
-          link: "https://github.com/Nhatanhhhh/PenguinStore" 
+        {
+          title: "Online Clothing Store (PenguinShop)",
+          summary: "Dự án MVC thuần Java. Tự viết connection pool, xử lý Session/Cookie thủ công để hiểu rõ bản chất Web Server.",
+          teamSize: "5 thành viên (Đại học)",
+          myRole: "Backend Core (Quản lý sản phẩm, Giỏ hàng, Thống kê doanh thu).",
+          tech: ["Java", "JSP/Servlet", "SQL Server", "MVC"],
+          link: "https://github.com/Nhatanhhhh/PenguinStore"
         },
-        { 
-          title: "Minesweeper Game (Dò mìn)", 
-          summary: "Trò chơi Dò mìn cổ điển được xây dựng bằng Java Swing. Đây là dự án nhóm tại trường đại học, bao gồm các chức năng chính của game.",
+        {
+          title: "Minesweeper Game (Dò mìn)",
+          summary: "Game logic thuật toán phức tạp (Loang, Cắm cờ) xây dựng bằng Java Swing. Quản lý trạng thái game (State Management) thủ công.",
           teamSize: "4 Thành viên",
-          myRole: "Team Leader, Xây dựng logic game (Board, Square), tích hợp các panel.",
-          tech: ["Java", "Java Swing", "Ant"], 
-          link: "https://github.com/minhminh24x/Minesweeper-Game" 
+          myRole: "Team Leader, Logic Developer.",
+          tech: ["Java", "Java Swing", "Ant"],
+          link: "https://github.com/minhminh24x/Minesweeper-Game"
         },
-        { 
-          title: "WPF Patient Manager", 
-          summary: "Ứng dụng desktop (Windows) để quản lý bệnh nhân. Xây dựng bằng C# (WPF) và kết nối CSDL qua Entity Framework Core.",
+        {
+          title: "WPF Patient Manager",
+          summary: "Ứng dụng Desktop quản lý bệnh nhân. Sử dụng Entity Framework Core để tương tác CSDL, mô hình MVVM.",
           teamSize: "Dự án cá nhân",
           myRole: "Desktop Developer",
-          tech: ["C#", "WPF", "EF Core"], 
+          tech: ["C#", "WPF", "EF Core"],
           link: null
         },
-        { 
-          title: "Smart Trash Can (Thùng rác thông minh)", 
-          summary: "Dự án IoT đầu tay. Sử dụng cảm biến siêu âm để phát hiện vật thể, tự động mở nắp bằng động cơ servo và hiển thị trạng thái lên LCD.",
-          teamSize: "5 thành viên (Đại học - Dự án nhóm)",
-          myRole: "IoT Developer (Hardware & Software)",
-          tech: ["Arduino", "C++", "Sensors"], 
+        {
+          title: "Smart Trash Can (IoT)",
+          summary: "Hệ thống nhúng xử lý tín hiệu cảm biến siêu âm thời gian thực, điều khiển động cơ Servo đóng mở tự động.",
+          teamSize: "5 thành viên",
+          myRole: "IoT Developer (C++ & Circuit Design).",
+          tech: ["Arduino", "C++", "Sensors"],
           link: null
         },
       ],
       certifications: [
-        { 
-          title: "User Experience Research and Design", 
-          from: "Coursera", 
-          date: "8/2025", 
+        {
+          title: "User Experience Research and Design",
+          from: "Coursera",
+          date: "8/2025",
           link: "https://coursera.org/share/01a219e75434229132e21f4449d1a480",
-          desc: "Hoàn thành khóa học về Nghiên cứu và Thiết kế UX."
+          desc: "User-centric design thinking."
         },
-        { 
-          title: "CertNexus Certified Ethical Emerging Technologist", 
-          from: "Coursera", 
-          date: "1/2025", 
+        {
+          title: "CertNexus Certified Ethical Emerging Technologist",
+          from: "Coursera",
+          date: "1/2025",
           link: "https://coursera.org/share/6fc18172ffaa6af7c7ff60c39f07e886",
-          desc: "Hiểu biết về các vấn đề đạo đức trong công nghệ mới nổi (AI, IoT...)."
+          desc: "Ethical issues in emerging tech (AI, IoT)."
         },
-        { 
-          title: "Software Development Lifecycle", 
-          from: "Coursera", 
-          date: "9/2024", 
+        {
+          title: "Software Development Lifecycle",
+          from: "Coursera",
+          date: "9/2024",
           link: "https://coursera.org/share/d5370b0948f4e0b96bb08220c0fc658c",
-          desc: "Nắm vững các quy trình trong vòng đời phát triển phần mềm."
+          desc: "SDLC processes (Agile, Waterfall)."
         },
-        { 
-          title: "Web Design for Everybody: Basics", 
-          from: "Coursera", 
-          date: "5/2024", 
+        {
+          title: "Web Design for Everybody: Basics",
+          from: "Coursera",
+          date: "5/2024",
           link: "https://coursera.org/share/fdefe34c2e94ac09bdf0cac99cb6102f",
-          desc: "Kiến thức cơ bản về HTML, CSS, và JavaScript."
+          desc: "HTML, CSS, JS fundamentals."
         },
-        { 
-          title: "Software Engineer Intern Certificate", 
-          from: "HackerRank", 
-          date: "6/2024", 
+        {
+          title: "Software Engineer Intern Certificate",
+          from: "HackerRank",
+          date: "6/2024",
           link: "https://www.hackerrank.com/certificates/9e9dda4bf87f",
-          desc: "Đạt chứng nhận Kỹ sư phần mềm thực tập qua bài kiểm tra kỹ năng."
+          desc: "Practical coding skills certification."
         },
-        { 
-          title: "Problem Solving (Intermediate) Certificate", 
-          from: "HackerRank", 
-          date: "5/2025",
+        {
+          title: "Problem Solving (Intermediate)",
+          from: "HackerRank",
+          date: "5/2024",
           link: "https://www.hackerrank.com/certificates/98a168e94af3",
-          desc: "Chứng nhận khả năng giải quyết vấn đề thuật toán mức trung cấp."
+          desc: "Algorithmic problem-solving skills."
         }
       ],
+      // MỤC 6: Learning Streak
       badges: {
-        title: "Huy hiệu Kỹ năng HackerRank",
-        desc: "Các huy hiệu kỹ năng (như Java, SQL) đã đạt được. Xem tất cả trên hồ sơ của tôi.",
+        title: "Thành tựu & Học tập liên tục",
+        desc: "100+ bài LeetCode/HackerRank. 50+ phiên debug thực tế. Thực chiến dự án FPT Software.",
         link: "https://www.hackerrank.com/loclm9824",
-        cta: "Xem hồ sơ HackerRank"
+        cta: "HackerRank Profile"
       },
       activities: [
-        { title: "Phó chủ tịch CLB VHC", desc: "Quản lý thông tin, hoạt động đối nội và giám sát thành viên.", date: "2023 - 2024" },
-        { title: "Thành viên 'Con đường xanh'", desc: "Tham gia các hoạt động thiện nguyện: phát bánh mì, thả cá, làm công đức tại chùa.", date: "2022 - Hiện tại" }
+        { title: "TestIO Freelance Tester", desc: "Đạt Level 3 (Silver). Phát hiện các lỗi Edge Case hiếm gặp.", date: "2023 - Hiện tại" },
+        { title: "CLB VHC & Con Đường Xanh", desc: "Rèn luyện kỹ năng mềm, quản lý đội nhóm và trách nhiệm xã hội.", date: "2022 - 2024" }
       ],
     },
+
     whatIWillDo: {
       title: 'Định hướng tương lai',
       systemDesign: {
@@ -221,45 +248,65 @@ export const translations = {
         desc: 'Phấn đấu, học hỏi kỹ năng quản lý và chuyên môn để đạt mục tiêu trở thành Team Leader sau 3-4 năm.',
       },
     },
+
     skills: {
       title: 'Kỹ năng chuyên môn',
-      subtitle: 'Kỹ năng mềm',
+      subtitle: 'Công cụ & Quy trình (Workflow)',
       hardSkills: [
         { name: "Backend", skills: "Java Spring Boot, JSP/Servlet, REST API" },
         { name: "Frontend", skills: "React + Vite, HTML5, CSS3, JavaScript" },
         { name: "Database", skills: "PostgreSQL, SQL Server, MySQL" },
-        { name: "System & Deploy", skills: "Docker, Cloudflare Tunnel, GitHub" },
-        { name: "Desktop", skills: "C#, WPF, Entity Framework Core" },
-        { name: "IoT", skills: "Arduino, Sensors, Motor Control" }
+        { name: "Security", skills: "JWT, OAuth2, IAM Key, Spring Security" },
+        { name: "System", skills: "Docker, Cloudflare Tunnel, GitHub Actions" },
+        { name: "Desktop & IoT", skills: "C#, WPF, Arduino, Sensors" }
       ],
+      // MỤC 3: Tools & Workflow
+      tools: [
+        { name: "Version Control", desc: "Git, GitHub (Branching Strategy, Pull Requests)." },
+        { name: "Dev Tools", desc: "IntelliJ, VS Code, SSMS, pgAdmin, Postman, Swagger." },
+        { name: "Workflow", desc: "Agile/Scrum, Debugging (Breakpoints, Logs), CI/CD basic." }
+      ],
+      // MỤC 4: Specialized Interests (Điểm mạnh kỹ thuật) -> Hiển thị ở phần Skills
+      specialized: {
+        title: "Sở trường kỹ thuật",
+        items: [
+          "Thiết kế hệ thống (System Design) mức Beginner-Intermediate.",
+          "Tối ưu Database (Normalization, Indexing).",
+          "Tư duy API chuyên nghiệp (Idempotency, Validation, DTO).",
+          "Kỹ năng Debugging mạnh mẽ trên nhiều môi trường."
+        ]
+      },
       softSkills: [
         { name: "Làm việc nhóm & Giao tiếp", desc: "Cởi mở, thuyết trình, và truyền tải thông tin hiệu quả." },
         { name: "Đọc hiểu & Phân tích", desc: "Đọc hiểu tài liệu tiếng Anh, phân tích và tổ chức nhiệm vụ." },
         { name: "Phẩm chất cá nhân", desc: "Chăm chỉ, kiên nhẫn, có trách nhiệm, làm việc dưới áp lực." }
       ],
+
     },
+
     contact: {
       title: 'Liên hệ',
-      subtitle: 'Tôi luôn cởi mở để trao đổi về các cơ hội mới.',
+      subtitle: 'Sẵn sàng trao đổi về cơ hội Backend/Fullstack.',
       email: 'Email',
       github: 'GitHub',
-      formTitle: "Gửi tin nhắn cho tôi",
-      formName: "Họ và tên",
-      formEmail: "Email của bạn",
+      formTitle: "Gửi tin nhắn",
+      formName: "Tên của bạn",
+      formEmail: "Email",
       formSubject: "Tiêu đề",
-      formMessage: "Nội dung tin nhắn...",
-      formSend: "Gửi tin nhắn",
+      formMessage: "Nội dung...",
+      formSend: "Gửi đi",
       formSending: "Đang gửi...",
-      formSuccess: "Gửi thành công! Cảm ơn bạn.",
-      formError: "Gửi thất bại. Vui lòng thử lại.",
+      formSuccess: "Đã gửi thành công!",
+      formError: "Lỗi, vui lòng thử lại.",
     },
   },
+
   en: {
     navbar: {
       intro: 'About',
       timeline: 'Timeline',
-      whatIDo: 'Doing',
-      whatIDone: 'Done',
+      whatIDo: 'Expertise',
+      whatIDone: 'Projects',
       whatIWillDo: 'Future',
       skills: 'Skills',
       contact: 'Contact',
@@ -267,19 +314,18 @@ export const translations = {
     hero: {
       greeting: '👋 Hi, I\'m',
       name: 'Lê Minh Lộc!',
-      subtitle: 'DEVELOPER & TESTER',
+      subtitle: 'BACKEND DEVELOPER & TESTER',
       sequence: [
-        'Backend Developer', 2000,
-        'Web & System Developer', 2000,
-        'Freelance Tester', 2000,
-        'IoT & Game Enthusiast', 2000,
+        'Backend Developer (Java/Spring)', 2000,
+        'System Optimization Enthusiast', 2000,
+        'Freelance Tester (TestIO)', 2000,
+        'IoT & Automation Lover', 2000,
       ],
-      quote: '“Code is the art of turning ideas into reality.”',
-      cta: 'View My Projects',
+      quote: '“Code works is not enough. It must be secure, optimized, and maintainable.”',
+      cta: 'View Real-world Skills',
     },
     introduction: {
-      title: 'About Me',
-      // === KHÔI PHỤC HIGHLIGHTS (EN) ===
+      title: 'Competency Overview',
       highlights: {
         title: 'Professional Highlights',
         items: [
@@ -290,11 +336,25 @@ export const translations = {
           'AI-Assisted Dev: Leveraging AI for log analysis, test generation, and SQL optimization.'
         ]
       },
+      problemSolving: {
+        title: 'Real-World Problem Solving',
+        items: [
+          'Fixing 401 Unauthorized during IAM API key validation.',
+          'Resolving 403 Forbidden caused by Spring Security misconfiguration.',
+          'Fixing 500 Internal Server Error tied to JWT parsing and UUID handling.',
+          'Debugging Windows infinite recursive folders caused by misbuilt packages.',
+          'SSL certificate errors, database constraint conflicts, and transaction bugs.'
+        ]
+      },
+      aiAssisted: {
+        title: 'AI Collaboration',
+        desc: 'I work collaboratively with AI tools to accelerate development—debugging issues, designing systems, generating test cases, and building complex backend features.'
+      },
       education: {
         title: 'Education',
-        line1: 'Currently a 4rd-year student',
+        line1: 'FPT University Can Tho (2022 - 2026)',
         line2: 'Major: Software Engineering',
-        line3: 'At: FPT University, Can Tho (2022 - 2026)',
+        line3: 'Focus: Backend System & Security',
       },
       goals: {
         title: 'Career Goals',
@@ -302,10 +362,10 @@ export const translations = {
         line2: 'Long-term: Strive to become a Team Leader after 3-4 years.',
       },
       values: {
-        title: 'Core Values',
-        line1: 'Hard-working, detail-oriented, patient, and able to work under pressure.',
-        line2: 'Strong teamwork, communication, and presentation skills.',
-        line3: 'Proficient in reading and understanding English technical documents.',
+        title: 'Work Style',
+        line1: 'Problem Solver: I focus on fixing root causes, not just patching bugs.',
+        line2: 'Resilience: Patient with hard bugs (Legacy code, Config issues).',
+        line3: 'Communication: Clear and effective technical communication.',
       },
     },
     timeline: {
@@ -318,142 +378,142 @@ export const translations = {
       ]
     },
     whatIDo: {
-      title: 'What I Do',
+      title: 'Areas of Expertise',
       backend: {
-        title: 'Backend Development',
-        desc: 'Focusing on advanced Backend skills with Java (Spring Boot), JSP/Servlet, and databases like PostgreSQL & SQL Server.',
+        title: 'Backend & Security',
+        desc: 'Building standard RESTful APIs with Spring Boot. Handling Idempotency, Validation, DTOs. Optimizing SQL Server/PostgreSQL queries.',
       },
       frontend: {
-        title: 'Frontend & System',
-        desc: 'Learning and building modern frontends with React + Vite. Exploring Docker and deployment solutions (Cloudflare Tunnel).',
+        title: 'System & Deploy',
+        desc: 'Docker deployment, Basic CI/CD (GitHub Actions). Deep understanding of HTTP Status (401 vs 403, 500).',
       },
       tester: {
-        title: 'Freelance Tester',
-        desc: 'Working as a freelancer on the TestIO Platform. Achieved Level 3 (Silver Tester) with over 60% bug acceptance rate.',
+        title: 'Testing & Debugging',
+        desc: 'Silver Tester on TestIO. Spotting UI/UX & Business Logic bugs. Proficient in Postman/Swagger.',
       },
     },
     whatIDone: {
-      title: 'What I\'ve Done',
+      title: 'Projects & Achievements',
       tabProjects: 'Projects',
       tabCerts: 'Certifications',
       tabActivities: 'Activities',
-      githubLink: 'View on GitHub',
+      githubLink: 'Source Code',
       detailLabels: {
-        summary: 'Summary',
+        summary: 'Tech Description',
         teamSize: 'Team Size',
-        myRole: 'My Role',
+        myRole: 'Role & Stack',
       },
       projects: [
-        { 
-          title: "Personal Portfolio (This Website)", 
-          summary: "The very site you are viewing! A dynamic portfolio built from scratch. Features multi-language, particle backgrounds, and scroll reveal animations.",
+        {
+          title: "Portfolio (This Site)",
+          summary: "Personal showcase. React performance optimization, Context API for I18n, Serverless form handling.",
           teamSize: "2 Members (Developer & AI Assistant)",
-          myRole: "Lead Developer, UI/UX Designer, Animation Integrator.",
-          tech: ["React", "Vite", "Framer Motion", "react-tsparticles", "EmailJS"], 
-          link: "https://github.com/minhminh24x/loclmportfolio" 
+          myRole: "Frontend & Deployment",
+          tech: ["React", "Vite", "Framer Motion", "react-tsparticles", "EmailJS"],
+          link: "https://github.com/minhminh24x/loclmportfolio"
         },
-        { 
-          title: "Tai Loc Shop (E-commerce)", 
-          summary: "A modern full-stack e-commerce platform. Backend uses Node.js, Express, and Prisma. Frontend is built with React and TailwindCSS.",
-          teamSize: "Personal Project (In Development)",
-          myRole: "Fullstack Developer",
-          tech: ["React", "Node.js", "Express", "Prisma", "TailwindCSS"], 
-          link: "https://github.com/minhminh24x/tailocshop" 
+        {
+          title: "Tai Loc Shop (E-commerce)",
+          summary: "Fullstack E-commerce. Applied JWT for Auth, Prisma ORM. Handled Transactions and Race Conditions manually.",
+          teamSize: "Personal",
+          myRole: "Fullstack (Node.js, Express, React, Prisma, Tailwind).",
+          tech: ["React", "Node.js", "Express", "Prisma", "TailwindCSS"],
+          link: "https://github.com/minhminh24x/tailocshop"
         },
-        { 
-          title: "Medical Record System", 
-          summary: "A basic patient record management system. Uses Spring Boot for the backend API and PostgreSQL for the database. Integrated JWT for authentication.",
-          teamSize: "6 Members (FPT Software Internship)",
-          myRole: "Fullstack Developer",
-          tech: ["Spring Boot", "PostgreSQL", "JWT"], 
+        {
+          title: "Medical Record System",
+          summary: "Patient Management (FPT Software Internship). API Security with Spring Security, strict Role-based Access Control.",
+          teamSize: "6 Members",
+          myRole: "Backend Dev (Spring Boot, PostgreSQL, JWT).",
+          tech: ["Spring Boot", "PostgreSQL", "Security"],
           link: null
         },
-        { 
-          title: "Online Clothing Store (PenguinShop)", 
-          summary: "E-commerce MVC web (Java EE JSP/Servlet + SQL Server). Features a complete e-commerce pipeline including cart, vouchers, checkout, and revenue export to Excel.",
-          teamSize: "5 Members (University Group Project)",
-          myRole: "Backend Developer (Product & Cart Management).",
-          tech: ["Java", "JSP/Servlet", "SQL Server", "MVC"], 
-          link: "https://github.com/Nhatanhhhh/PenguinStore" 
+        {
+          title: "Online Clothing Store (PenguinShop)",
+          summary: "Pure Java MVC Project. Wrote manual connection pool, handled Session/Cookie manually to understand Web Server core.",
+          teamSize: "5 Members",
+          myRole: "Backend Core (Cart Logic, SQL Queries, Reporting).",
+          tech: ["Java Servlet", "SQL Server", "MVC"],
+          link: "https://github.com/Nhatanhhhh/PenguinStore"
         },
-        { 
-          title: "Minesweeper Game", 
-          summary: "A classic Minesweeper game built with Java Swing. This was a university group project, featuring core game functionalities.",
+        {
+          title: "Minesweeper Game",
+          summary: "A classic Minesweeper game built with Java Swing. Complex algorithms (Flood fill, Flagging) and manual State Management.",
           teamSize: "4 Members",
-          myRole: "Team Leader, Built game logic (Board, Square), Integrated panels.",
-          tech: ["Java", "Java Swing", "Ant"], 
-          link: "https://github.com/minhminh24x/Minesweeper-Game" 
+          myRole: "Team Leader, Logic Developer.",
+          tech: ["Java", "Java Swing", "Ant"],
+          link: "https://github.com/minhminh24x/Minesweeper-Game"
         },
-        { 
-          title: "WPF Patient Manager", 
-          summary: "A Windows desktop application for managing patients. Built with C# (WPF) and connected to SQL Server via Entity Framework Core.",
-          teamSize: "Personal Project",
+        {
+          title: "WPF Patient Manager",
+          summary: "Windows desktop app. MVVM architecture, Entity Framework Core for database interaction.",
+          teamSize: "Personal",
           myRole: "Desktop Developer",
-          tech: ["C#", "WPF", "EF Core"], 
+          tech: ["C#", "WPF", "EF Core"],
           link: null
         },
-        { 
-          title: "Smart Trash Can", 
-          summary: "My first IoT project. Uses an ultrasonic sensor to detect objects, automatically opens the lid with a servo motor, and displays status on an LCD.",
-          teamSize: "5 Members (University Group Project)",
-          myRole: "IoT Developer (Hardware & Software)",
-          tech: ["Arduino", "C++", "Sensors"], 
+        {
+          title: "Smart Trash Can (IoT)",
+          summary: "Embedded system handling real-time ultrasonic sensor signals to control Servo motors automatically.",
+          teamSize: "5 Members",
+          myRole: "IoT Developer (C++ & Circuit Design).",
+          tech: ["Arduino", "C++", "Sensors"],
           link: null
         },
       ],
       certifications: [
-        { 
-          title: "User Experience Research and Design", 
-          from: "Coursera", 
-          date: "8/2025", 
+        {
+          title: "User Experience Research and Design",
+          from: "Coursera",
+          date: "8/2025",
           link: "https://coursera.org/share/01a219e75434229132e21f4449d1a480",
-          desc: "Completed coursework on UX Research and Design principles."
+          desc: "User-centric design thinking."
         },
-        { 
-          title: "CertNexus Certified Ethical Emerging Technologist", 
-          from: "Coursera", 
-          date: "1/2025", 
+        {
+          title: "CertNexus Certified Ethical Emerging Technologist",
+          from: "Coursera",
+          date: "1/2025",
           link: "https://coursera.org/share/6fc18172ffaa6af7c7ff60c39f07e886",
-          desc: "Understanding of ethical issues in emerging tech (AI, IoT...)."
+          desc: "Ethical issues in emerging tech (AI, IoT)."
         },
-        { 
-          title: "Software Development Lifecycle", 
-          from: "Coursera", 
-          date: "9/2024", 
+        {
+          title: "Software Development Lifecycle",
+          from: "Coursera",
+          date: "9/2024",
           link: "https://coursera.org/share/d5370b0948f4e0b96bb08220c0fc658c",
-          desc: "Mastery of the processes involved in the software dev lifecycle."
+          desc: "SDLC processes (Agile, Waterfall)."
         },
-        { 
-          title: "Web Design for Everybody: Basics of Web Development & Coding", 
-          from: "Coursera", 
-          date: "5/2024", 
+        {
+          title: "Web Design for Everybody: Basics",
+          from: "Coursera",
+          date: "5/2024",
           link: "https://coursera.org/share/fdefe34c2e94ac09bdf0cac99cb6102f",
-          desc: "Fundamental knowledge of HTML, CSS, and JavaScript."
+          desc: "HTML, CSS, JS fundamentals."
         },
-        { 
-          title: "Software Engineer Intern Certificate", 
-          from: "HackerRank", 
-          date: "6/2024", 
+        {
+          title: "Software Engineer Intern Certificate",
+          from: "HackerRank",
+          date: "6/2024",
           link: "https://www.hackerrank.com/certificates/9e9dda4bf87f",
-          desc: "Achieved Software Engineer Intern certification via skills assessment."
+          desc: "Practical coding skills certification."
         },
-        { 
-          title: "Problem Solving (Intermediate) Certificate", 
-          from: "HackerRank", 
-          date: "5/2024", 
+        {
+          title: "Problem Solving (Intermediate)",
+          from: "HackerRank",
+          date: "5/2024",
           link: "https://www.hackerrank.com/certificates/98a168e94af3",
-          desc: "Certified intermediate-level algorithmic problem-solving skills."
+          desc: "Algorithmic problem-solving skills."
         }
       ],
       badges: {
-        title: "HackerRank Skill Badges",
-        desc: "Various skill badges (like Java, SQL) earned. View all on my profile.",
+        title: "Learning Streak & Achievements",
+        desc: "100+ LeetCode/HackerRank problems. 50+ real-world backend debugging sessions.",
         link: "https://www.hackerrank.com/loclm9824",
-        cta: "View HackerRank Profile"
+        cta: "HackerRank Profile"
       },
       activities: [
-        { title: "Vice President - VHC Club", desc: "Managed internal information, activities, and supervised members.", date: "2023 - 2024" },
-        { title: "Member - 'Con đường xanh'", desc: "Participated in charity events: distributing bread, releasing fish, and volunteer work at temples.", date: "2022 - Present" }
+        { title: "TestIO Freelance Tester", desc: "Level 3 (Silver). Detected rare Edge Case bugs.", date: "2023 - Present" },
+        { title: "VHC Club & Green Path", desc: "Soft skills, team management & social responsibility.", date: "2022 - 2024" }
       ],
     },
     whatIWillDo: {
@@ -477,35 +537,44 @@ export const translations = {
     },
     skills: {
       title: 'Technical Skills',
-      subtitle: 'Soft Skills',
+      subtitle: 'Tools & Workflow',
       hardSkills: [
         { name: "Backend", skills: "Java Spring Boot, JSP/Servlet, REST API" },
         { name: "Frontend", skills: "React + Vite, HTML5, CSS3, JavaScript" },
         { name: "Database", skills: "PostgreSQL, SQL Server, MySQL" },
-        { name: "System & Deploy", skills: "Docker, Cloudflare Tunnel, GitHub" },
-        { name: "Desktop", skills: "C#, WPF, Entity Framework Core" },
-        { name: "IoT", skills: "Arduino, Sensors, Motor Control" }
+        { name: "Security", skills: "JWT, OAuth2, IAM Key, Spring Security" },
+        { name: "System", skills: "Docker, Cloudflare Tunnel, GitHub Actions" },
+        { name: "Desktop & IoT", skills: "C#, WPF, Arduino, Sensors" }
       ],
-      softSkills: [
-        { name: "Teamwork & Communication", desc: "Open, strong presentation skills, and effective information conveyance." },
-        { name: "Comprehension & Analysis", desc: "Proficient in reading English documents, task analysis, and organization." },
-        { name: "Personal Attributes", desc: "Hard-working, patient, responsible, and performs well under pressure." }
+      tools: [
+        { name: "Version Control", desc: "Git, GitHub (Branching Strategy, Pull Requests)." },
+        { name: "Dev Tools", desc: "IntelliJ, VS Code, SSMS, pgAdmin, Postman, Swagger." },
+        { name: "Workflow", desc: "Agile/Scrum basics, Debugging (Breakpoints, Logs)." }
       ],
+      specialized: {
+        title: "Specialized Interests",
+        items: [
+          "System Design (Beginner-Intermediate).",
+          "Database Optimization (Normalization, Indexing).",
+          "Professional API Design (Idempotency, Validation, DTO).",
+          "Strong Debugging Mindset."
+        ]
+      }
     },
     contact: {
       title: 'Contact',
-      subtitle: 'I\'m always open to discussing new opportunities.',
+      subtitle: 'Open for Backend/Fullstack opportunities.',
       email: 'Email',
       github: 'GitHub',
-      formTitle: "Get in Touch",
-      formName: "Your Name",
-      formEmail: "Your Email",
+      formTitle: "Send Message",
+      formName: "Name",
+      formEmail: "Email",
       formSubject: "Subject",
-      formMessage: "Your message...",
-      formSend: "Send Message",
+      formMessage: "Message...",
+      formSend: "Send",
       formSending: "Sending...",
-      formSuccess: "Success! Thank you.",
-      formError: "Failed to send. Please try again.",
+      formSuccess: "Sent successfully!",
+      formError: "Error, please try again.",
     },
   },
 };

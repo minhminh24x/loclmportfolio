@@ -10,8 +10,8 @@ function Introduction() {
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, staggerChildren: 0.2 }
     }
@@ -23,8 +23,8 @@ function Introduction() {
   };
 
   return (
-    <motion.section 
-      id="introduction" 
+    <motion.section
+      id="introduction"
       className="section"
       variants={sectionVariants}
       initial="hidden"
@@ -33,9 +33,16 @@ function Introduction() {
     >
       <div className="container">
         <h2>{introT.title}</h2>
-
+        <div className="highlights-box">
+          <h3><FaStar className="highlight-icon" /> {introT.highlights.title}</h3>
+          <ul>
+            {introT.highlights.items.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </div>
         <div className="intro-grid">
-          
+
           {/* Card 1: Điểm nhấn chuyên môn (Highlights) - QUAN TRỌNG */}
           <motion.div className="intro-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
@@ -69,8 +76,8 @@ function Introduction() {
             </div>
             <h3>{introT.goals.title}</h3>
             <div style={{ marginTop: '15px', textAlign: 'left' }}>
-              <p>🚀 <strong>Short-term:</strong><br/> {introT.goals.line1}</p>
-              <p>🎯 <strong>Long-term:</strong><br/> {introT.goals.line2}</p>
+              <p>🚀 <strong>Short-term:</strong><br /> {introT.goals.line1}</p>
+              <p>🎯 <strong>Long-term:</strong><br /> {introT.goals.line2}</p>
             </div>
           </motion.div>
 
