@@ -11,6 +11,14 @@ export const translations = {
       skills: 'Kỹ năng',
       contact: 'Liên hệ',
     },
+    projectModal: {
+      overview: "Tổng quan & Thách thức",
+      features: "Tính năng nổi bật",
+      techStack: "Công nghệ sử dụng",
+      sourceCode: "Mã nguồn",
+      liveDemo: "Xem Demo",
+      close: "Đóng"
+    },
     hero: {
       greeting: '👋 Xin chào, tôi là',
       name: 'Lê Minh Lộc!',
@@ -116,7 +124,7 @@ export const translations = {
         myRole: 'Vai trò & Tech Stack',
       },
       projects: [
-       {
+        {
           title: "Portfolio (This Site)",
           summary: "Trang web bạn đang xem. Tối ưu hiệu năng React, tích hợp đa ngôn ngữ Context API.",
           longDescription: "Đây không chỉ là một trang tĩnh. Tôi đã xây dựng nó như một ứng dụng React hoàn chỉnh với tư duy về Performance và Scalability. Thách thức lớn nhất là xử lý Multi-language mà không làm trang bị giật (flicker), và tích hợp EmailJS để gửi form không cần Backend server riêng.",
@@ -129,7 +137,7 @@ export const translations = {
           myRole: "Frontend & Deployment",
           tech: ["React", "Vite", "Framer Motion", "EmailJS"],
           link: "https://github.com/minhminh24x/loclmportfolio",
-          demoLink: "https://loclmportfolio.vercel.app/" // <--- THÊM LINK DEMO (Thay bằng link thật của bạn)
+          demoLink: "https://loclmportfolio.vercel.app/"
         },
         {
           title: "Tai Loc Shop (E-commerce)",
@@ -148,9 +156,13 @@ export const translations = {
         },
         {
           title: "Medical Record System",
-          summary: "Hệ thống quản lý bệnh án (FPT Software Internship). Xử lý bảo mật API với Spring Security, phân quyền Role-based chặt chẽ.",
+          summary: "Hệ thống quản lý bệnh án (FPT Software Internship). Xử lý bảo mật API với Spring Security.",
           longDescription: "Hệ thống quản lý quy mô lớn tại doanh nghiệp. Tôi chịu trách nhiệm module bảo mật, đảm bảo dữ liệu bệnh nhân không bị truy cập trái phép bằng Spring Security và phân quyền Role-based chặt chẽ.",
-          features: ["Spring Security Custom Filter Chain.", "Mã hóa dữ liệu nhạy cảm.", "RESTful API chuẩn Level 2."],
+          features: [
+            "Spring Security Custom Filter Chain.",
+            "Mã hóa dữ liệu nhạy cảm (Sensitive Data Encryption).",
+            "RESTful API chuẩn Level 2."
+          ],
           teamSize: "6 thành viên",
           myRole: "Backend Developer (Spring Boot, PostgreSQL, JWT).",
           tech: ["Spring Boot", "PostgreSQL", "JWT"],
@@ -158,15 +170,27 @@ export const translations = {
         },
         {
           title: "Online Clothing Store (PenguinShop)",
-          summary: "Dự án MVC thuần Java. Tự viết connection pool, xử lý Session/Cookie thủ công để hiểu rõ bản chất Web Server.",
+          summary: "Dự án MVC thuần Java. Tự viết connection pool, xử lý Session thủ công.",
+          longDescription: "Dự án Web MVC thuần được xây dựng từ con số 0 (scratch) để thấu hiểu bản chất Web Server. Thay vì dùng Framework, tôi tự triển khai Connection Pool thủ công để tối ưu kết nối CSDL và xử lý Session/Cookie trực tiếp để quản lý giỏ hàng, giúp hiểu sâu về vòng đời Request-Response.",
+          features: [
+            "Mô hình MVC (Model-View-Controller) chuẩn mực với Servlet & JSP.",
+            "Tự xây dựng JDBC Connection Pool (Không dùng Hibernate).",
+            "Quản lý State (Session/Cookie) thủ công cho Authentication."
+          ],
           teamSize: "5 thành viên (Đại học)",
-          myRole: "Backend Core (Quản lý sản phẩm, Giỏ hàng, Thống kê doanh thu).",
+          myRole: "Backend Core (Quản lý sản phẩm, Giỏ hàng, Thống kê).",
           tech: ["Java", "JSP/Servlet", "SQL Server", "MVC"],
           link: "https://github.com/Nhatanhhhh/PenguinStore"
         },
         {
           title: "Minesweeper Game (Dò mìn)",
-          summary: "Game logic thuật toán phức tạp (Loang, Cắm cờ) xây dựng bằng Java Swing. Quản lý trạng thái game (State Management) thủ công.",
+          summary: "Game thuật toán phức tạp (Loang, Cắm cờ) với Java Swing. Quản lý State thủ công.",
+          longDescription: "Tái hiện tựa game kinh điển với cấu trúc dữ liệu Đồ thị (Graph), coi mỗi ô là một đỉnh. Tôi áp dụng thuật toán Loang (Flood Fill) sử dụng BFS/DFS đệ quy để mở rộng các ô trống thông minh mà không gây tràn bộ nhớ (Stack Overflow). Giao diện được tùy biến hoàn toàn (Custom UI).",
+          features: [
+            "Thuật toán BFS/DFS đệ quy xử lý logic 'Loang' (Flood Fill).",
+            "Quản lý Game State (Play, Win, Lose) và Timer thời gian thực.",
+            "Giao diện Custom Swing với xử lý sự kiện chuột (Left/Right Click)."
+          ],
           teamSize: "4 Thành viên",
           myRole: "Team Leader, Logic Developer.",
           tech: ["Java", "Java Swing", "Ant"],
@@ -174,7 +198,13 @@ export const translations = {
         },
         {
           title: "WPF Patient Manager",
-          summary: "Ứng dụng Desktop quản lý bệnh nhân. Sử dụng Entity Framework Core để tương tác CSDL, mô hình MVVM.",
+          summary: "Ứng dụng Desktop quản lý bệnh nhân. Mô hình MVVM, Entity Framework Core.",
+          longDescription: "Ứng dụng Desktop quản lý phòng khám sử dụng kiến trúc MVVM để tách biệt giao diện và logic. Tích hợp Entity Framework Core giúp thao tác database an toàn, tránh SQL Injection và dễ dàng bảo trì.",
+          features: [
+            "Kiến trúc MVVM (Model-View-ViewModel) chuẩn thiết kế.",
+            "Entity Framework Core (ORM) tương tác CSDL.",
+            "Data Binding hai chiều (Two-way binding) mạnh mẽ của WPF."
+          ],
           teamSize: "Dự án cá nhân",
           myRole: "Desktop Developer",
           tech: ["C#", "WPF", "EF Core"],
@@ -182,7 +212,13 @@ export const translations = {
         },
         {
           title: "Smart Trash Can (IoT)",
-          summary: "Hệ thống nhúng xử lý tín hiệu cảm biến siêu âm thời gian thực, điều khiển động cơ Servo đóng mở tự động.",
+          summary: "Hệ thống nhúng xử lý tín hiệu cảm biến siêu âm, điều khiển Servo tự động.",
+          longDescription: "Dự án IoT thực tế kết hợp phần cứng và phần mềm. Sử dụng C++ trên nền tảng Arduino để xử lý tín hiệu Analog từ cảm biến siêu âm, tính toán khoảng cách và điều khiển động cơ Servo đóng mở nắp thùng rác tự động với độ trễ thấp.",
+          features: [
+            "Xử lý tín hiệu thời gian thực (Real-time Signal Processing).",
+            "Lập trình ngắt (Interrupt) và điều khiển động cơ Servo.",
+            "Tối ưu code C++ cho vi điều khiển bộ nhớ thấp."
+          ],
           teamSize: "5 thành viên",
           myRole: "IoT Developer (C++ & Circuit Design).",
           tech: ["Arduino", "C++", "Sensors"],
@@ -328,6 +364,14 @@ export const translations = {
       skills: 'Skills',
       contact: 'Contact',
     },
+    projectModal: {
+      overview: "Overview & Challenges",
+      features: "Key Features",
+      techStack: "Technologies Used",
+      sourceCode: "Source Code",
+      liveDemo: "Live Demo",
+      close: "Close"
+    },
     hero: {
       greeting: '👋 Hi, I\'m',
       name: 'Lê Minh Lộc!',
@@ -425,31 +469,27 @@ export const translations = {
         {
           title: "Portfolio (This Site)",
           summary: "Personal showcase. React performance optimization, Context API for I18n.",
-          // === PHẦN TIẾNG ANH MỚI ===
           longDescription: "This is not just a static site. I built it as a full-featured React application with a mindset on Performance and Scalability. The biggest challenge was handling Multi-language support without flickering, and integrating EmailJS for serverless form handling.",
           features: [
             "Optimized rendering with React.lazy and Suspense.",
             "Global State Management for language via Context API.",
             "Smooth animations hitting 60FPS with Framer Motion."
           ],
-          // ==========================
           teamSize: "2 Members (Developer & AI Assistant)",
           myRole: "Frontend & Deployment",
           tech: ["React", "Vite", "Framer Motion", "EmailJS"],
           link: "https://github.com/minhminh24x/loclmportfolio",
-          demoLink: "https://loclmportfolio.vercel.app/" // <--- Link giống bên vi
+          demoLink: "https://loclmportfolio.vercel.app/"
         },
         {
           title: "Tai Loc Shop (E-commerce)",
           summary: "Fullstack E-commerce. Applied JWT for Auth, Prisma ORM. Handled Transactions manually.",
-          // === PHẦN TIẾNG ANH MỚI ===
           longDescription: "A fully functional e-commerce system. I focused on solving 'Race Conditions' in order placement and secure session management using JWT (Access Token + Refresh Token). The database is normalized for fast queries.",
           features: [
             "Two-layer Security Authentication (JWT).",
             "Real-time Cart Synchronization.",
             "Admin Dashboard for revenue statistics."
           ],
-          // ==========================
           teamSize: "Personal",
           myRole: "Fullstack (Node.js, Express, React, Prisma).",
           tech: ["React", "Node.js", "Express", "Prisma", "TailwindCSS"],
@@ -458,9 +498,13 @@ export const translations = {
         },
         {
           title: "Medical Record System",
-          summary: "Patient Management (FPT Software Internship). API Security with Spring Security, strict Role-based Access Control.",
+          summary: "Patient Management (FPT Software Internship). API Security with Spring Security.",
           longDescription: "Large-scale management system at the enterprise level. I was responsible for the security module, ensuring patient data integrity using Spring Security and strict Role-based Access Control.",
-          features: ["Spring Security Custom Filter Chain.", "Sensitive Data Encryption.", "Standard Level 2 RESTful API."],
+          features: [
+            "Spring Security Custom Filter Chain.",
+            "Sensitive Data Encryption.",
+            "Standard Level 2 RESTful API."
+          ],
           teamSize: "6 Members",
           myRole: "Backend Dev (Spring Boot, PostgreSQL, JWT).",
           tech: ["Spring Boot", "PostgreSQL", "Security"],
@@ -468,7 +512,13 @@ export const translations = {
         },
         {
           title: "Online Clothing Store (PenguinShop)",
-          summary: "Pure Java MVC Project. Wrote manual connection pool, handled Session/Cookie manually to understand Web Server core.",
+          summary: "Pure Java MVC Project. Manual Connection Pool & Session handling.",
+          longDescription: "A pure Java Web MVC project built from scratch to deeply understand Web Server internals. Instead of relying on heavy frameworks, I implemented a manual JDBC Connection Pool to manage database connections efficiently. Session and Cookie mechanisms were handled natively to manage Shopping Carts and Auth.",
+          features: [
+            "Standard MVC (Model-View-Controller) with JSP/Servlet.",
+            "Custom-built JDBC Connection Pool (Performance Optimization).",
+            "Native State Management (Session/Cookie) for Shopping Cart."
+          ],
           teamSize: "5 Members",
           myRole: "Backend Core (Cart Logic, SQL Queries, Reporting).",
           tech: ["Java Servlet", "SQL Server", "MVC"],
@@ -476,7 +526,13 @@ export const translations = {
         },
         {
           title: "Minesweeper Game",
-          summary: "A classic Minesweeper game built with Java Swing. Complex algorithms (Flood fill, Flagging) and manual State Management.",
+          summary: "Classic Minesweeper with Java Swing. Complex Graph algorithms & manual State Management.",
+          longDescription: "A robust recreation of the classic Minesweeper using Java Swing. The technical highlight is treating the grid as a Graph Data Structure. The Flood Fill algorithm (using optimized BFS/DFS) instantly reveals safe areas without causing Stack Overflow. The UI is fully customized with custom assets.",
+          features: [
+            "Recursive BFS/DFS algorithm for 'Flood Fill' mechanics.",
+            "Precise Game State Management (Play, Win, Lose, Timer).",
+            "Custom Swing GUI with complex Mouse Event handling."
+          ],
           teamSize: "4 Members",
           myRole: "Team Leader, Logic Developer.",
           tech: ["Java", "Java Swing", "Ant"],
@@ -484,7 +540,13 @@ export const translations = {
         },
         {
           title: "WPF Patient Manager",
-          summary: "Windows desktop app. MVVM architecture, Entity Framework Core for database interaction.",
+          summary: "Windows desktop app. MVVM architecture, Entity Framework Core.",
+          longDescription: "A desktop application for clinic management. I utilized the MVVM pattern to separate the UI from business logic, ensuring testability. Entity Framework Core was used for ORM, allowing efficient database interactions without writing raw SQL.",
+          features: [
+            "Standard MVVM (Model-View-ViewModel) Architecture.",
+            "Entity Framework Core (ORM) for Database Interaction.",
+            "Robust Two-way Data Binding in WPF."
+          ],
           teamSize: "Personal",
           myRole: "Desktop Developer",
           tech: ["C#", "WPF", "EF Core"],
@@ -492,13 +554,20 @@ export const translations = {
         },
         {
           title: "Smart Trash Can (IoT)",
-          summary: "Embedded system handling real-time ultrasonic sensor signals to control Servo motors automatically.",
+          summary: "Embedded system with Real-time Sensor processing & Servo control.",
+          longDescription: "An automation project combining hardware and software. Written in C++ on Arduino to process Analog signals from ultrasonic sensors, calculate distance, and control Servo motors to automatically open the lid with low latency.",
+          features: [
+            "Real-time Signal Processing.",
+            "Interrupt Handling & Servo Motor Control.",
+            "Optimized C++ code for low-memory microcontrollers."
+          ],
           teamSize: "5 Members",
           myRole: "IoT Developer (C++ & Circuit Design).",
           tech: ["Arduino", "C++", "Sensors"],
           link: null
         },
       ],
+      
       certifications: [
         {
           title: "User Experience Research and Design",

@@ -124,6 +124,13 @@ function WhatIDone() {
                           <p>{project.teamSize}</p>
                         </div>
                       </div>
+                      <div className="detail-item">
+                        <FaUserFriends className="detail-icon" />
+                        <div>
+                          <h4>{t.detailLabels.myRole}</h4>
+                          <p>{project.myRole}</p>
+                        </div>
+                      </div>
                     </div>
                     
                     <div className="click-hint">
