@@ -3,11 +3,11 @@
 export const translations = {
   vi: {
     navbar: {
-      intro: 'Tôi Là Ai',
+      intro: 'Tổng quan',
       timeline: 'Lộ trình',
-      whatIDo: 'Đang Làm Gì',
-      whatIDone: 'Đã Làm Gì',
-      whatIWillDo: 'Sẽ Làm Gì',
+      whatIDo: 'Chuyên môn',
+      whatIDone: 'Dự án',
+      whatIWillDo: 'Định hướng',
       skills: 'Kỹ năng',
       contact: 'Liên hệ',
     },
@@ -559,12 +559,7 @@ export const translations = {
           "Professional API Design (Idempotency, Validation, DTO).",
           "Strong Debugging Mindset."
         ]
-      },
-       softSkills: [
-        { name: "Teamwork & Communication", desc: "Open, strong presentation skills, and effective information conveyance." },
-        { name: "Comprehension & Analysis", desc: "Proficient in reading English documents, task analysis, and organization." },
-        { name: "Personal Attributes", desc: "Hard-working, patient, responsible, and performs well under pressure." }
-      ],
+      }
     },
     contact: {
       title: 'Contact',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaUniversity, FaFlagCheckered, FaGem, FaStar } from 'react-icons/fa'; // Thêm icon FaStar
+import { FaUniversity, FaFlagCheckered, FaGem, FaStar, FaTools, FaBrain } from 'react-icons/fa';
 import './Introduction.css';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -33,61 +33,78 @@ function Introduction() {
     >
       <div className="container">
         <h2>{introT.title}</h2>
-        <div className="highlights-box">
-          <h3><FaStar className="highlight-icon" /> {introT.highlights.title}</h3>
-          <ul>
-            {introT.highlights.items.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        
+        {/* ĐÃ XÓA PHẦN HIGHLIGHTS-BOX TRÙNG LẶP Ở ĐÂY */}
+
         <div className="intro-grid">
 
-          {/* Card 1: Điểm nhấn chuyên môn (Highlights) - QUAN TRỌNG */}
-          <motion.div className="intro-card" variants={cardVariants}>
+          {/* Card 1: Điểm nhấn chuyên môn (Highlights) */}
+          <motion.div className="intro-card highlight-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaStar className="intro-icon" />
             </div>
-            <h3>{introT.highlights?.title || "Highlights"}</h3>
-            <ul style={{ textAlign: 'left', paddingLeft: '20px', marginTop: '15px', color: 'var(--color-text-secondary)' }}>
+            <h3>{introT.highlights?.title}</h3>
+            <ul className="intro-list">
               {introT.highlights?.items.map((item, index) => (
-                <li key={index} style={{ marginBottom: '8px' }}>{item}</li>
+                <li key={index}>{item}</li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Card 2: Học vấn */}
+           {/* Card 2: Giải quyết vấn đề (Problem Solving - NEW) */}
+           <motion.div className="intro-card" variants={cardVariants}>
+            <div className="card-icon-wrapper">
+              <FaTools className="intro-icon" />
+            </div>
+            <h3>{introT.problemSolving?.title || "Problem Solving"}</h3>
+            <ul className="intro-list">
+              {introT.problemSolving?.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </motion.div>
+          
+          {/* Card 3: AI Collaboration (NEW) */}
+           <motion.div className="intro-card ai-card" variants={cardVariants}>
+            <div className="card-icon-wrapper">
+              <FaBrain className="intro-icon" />
+            </div>
+            <h3>{introT.aiAssisted?.title}</h3>
+            <p className="intro-desc">{introT.aiAssisted?.desc}</p>
+          </motion.div>
+
+          {/* Card 4: Học vấn */}
           <motion.div className="intro-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaUniversity className="intro-icon" />
             </div>
             <h3>{introT.education.title}</h3>
-            <div style={{ marginTop: '15px' }}>
+            <div className="intro-content-block">
               <p>{introT.education.line1}</p>
-              <p><strong>{introT.education.line2}</strong></p>
+              <p className="highlight-text">{introT.education.line2}</p>
               <p>{introT.education.line3}</p>
             </div>
           </motion.div>
 
-          {/* Card 3: Mục tiêu */}
+          {/* Card 5: Mục tiêu */}
           <motion.div className="intro-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaFlagCheckered className="intro-icon" />
             </div>
             <h3>{introT.goals.title}</h3>
-            <div style={{ marginTop: '15px', textAlign: 'left' }}>
+            <div className="intro-content-block align-left">
               <p>🚀 <strong>Short-term:</strong><br /> {introT.goals.line1}</p>
               <p>🎯 <strong>Long-term:</strong><br /> {introT.goals.line2}</p>
             </div>
           </motion.div>
 
-          {/* Card 4: Giá trị */}
+          {/* Card 6: Giá trị */}
           <motion.div className="intro-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaGem className="intro-icon" />
             </div>
             <h3>{introT.values.title}</h3>
-            <div style={{ marginTop: '15px' }}>
+            <div className="intro-content-block align-left">
               <p>✔️ {introT.values.line1}</p>
               <p>✔️ {introT.values.line2}</p>
               <p>✔️ {introT.values.line3}</p>
