@@ -161,3 +161,9 @@
   color: var(--color-text-secondary);
   line-height: 1.4;
 }
+
+@media (max-width: 768px) {
+  .advanced-skills-wrapper {
+    flex-direction: column;
+  }
+}
