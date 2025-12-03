@@ -28,8 +28,18 @@ const LoadingFallback = () => (
   </div>
 );
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function App() {
   const { language } = useLanguage();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   // === THÊM: Hiệu ứng đổi tiêu đề tab trình duyệt ===
   useEffect(() => {

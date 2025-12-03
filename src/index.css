@@ -1,13 +1,18 @@
-/* Sử dụng Google Font (Roboto) cho hiện đại */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+/* Sử dụng Google Font (Outfit & Inter) cho hiện đại */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;900&display=swap');
 
 :root {
   /* Theme Đen-Đỏ */
-  --color-dark-primary: #121212; /* Màu đen tuyền (vùng tối) */
-  --color-dark-secondary: #1e1e1e; /* Màu đen xám (vùng sáng hơn) */
-  --color-red-accent: #DC143C; /* Màu đỏ (Crimson) */
+  --color-dark-primary: #121212;
+  /* Màu đen tuyền (vùng tối) */
+  --color-dark-secondary: #1e1e1e;
+  /* Màu đen xám (vùng sáng hơn) */
+  --color-red-accent: #DC143C;
+  /* Màu đỏ (Crimson) */
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #b3b3b3;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 * {
@@ -21,31 +26,48 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-body);
   background-color: var(--color-dark-primary);
   color: var(--color-text-primary);
-  overflow-x: hidden; /* Chống cuộn ngang */
+  overflow-x: hidden;
+  /* Chống cuộn ngang */
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
 }
 
 /* Định nghĩa style cho các section */
 .section {
   min-height: 100vh;
   padding: 100px 10%;
-  border-bottom: 1px solid #333; /* Ngăn cách nhẹ */
+  border-bottom: 1px solid #333;
+  /* Ngăn cách nhẹ */
 }
 
 /* Vùng sáng / tối xen kẽ */
 .section:nth-child(odd) {
-  background-color: var(--color-dark-primary); /* Vùng tối */
+  background-color: var(--color-dark-primary);
+  /* Vùng tối */
 }
 
 .section:nth-child(even) {
-  background-color: var(--color-dark-secondary); /* Vùng sáng (xám) */
+  background-color: var(--color-dark-secondary);
+  /* Vùng sáng (xám) */
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--color-text-primary);
   margin-bottom: 20px;
+  font-family: var(--font-heading);
 }
 
 h1 {
@@ -55,20 +77,24 @@ h1 {
 
 /* Sửa đổi h2 */
 h2 {
-  font-size: 2.8rem; /* Cho to rõ hơn */
+  font-size: 2.8rem;
+  /* Cho to rõ hơn */
   font-weight: 700;
   color: var(--color-red-accent);
   text-align: center;
-  text-transform: uppercase; /* In hoa */
-  letter-spacing: 1.5px; /* Giãn cách chữ */
-  margin-bottom: 10px; /* Giảm margin dưới */
+  text-transform: uppercase;
+  /* In hoa */
+  letter-spacing: 1.5px;
+  /* Giãn cách chữ */
+  margin-bottom: 10px;
+  /* Giảm margin dưới */
 }
 
 /* Thêm 1 class cho tiêu đề phụ (nếu cần) */
 h2.skills-subtitle {
   font-size: 2.2rem;
   color: var(--color-text-primary);
-  margin-top: 80px; 
+  margin-top: 80px;
   border-top: 1px solid #444;
   padding-top: 40px;
   text-transform: none;
@@ -101,4 +127,3 @@ a:hover {
   max-width: 1200px;
   margin: 0 auto;
 }
-

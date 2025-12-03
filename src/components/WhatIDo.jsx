@@ -11,16 +11,16 @@ function WhatIDo() {
   // Hiệu ứng cho TOÀN BỘ SECTION
   const sectionVariants = {
     hidden: { opacity: 0, x: 100 }, // Trượt từ phải
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: { type: 'spring', stiffness: 50, duration: 0.8 }
     }
   };
-  
+
   return (
-    <motion.section 
-      id="what-i-do" 
+    <motion.section
+      id="what-i-do"
       className="section"
       variants={sectionVariants}
       initial="hidden"
@@ -30,9 +30,9 @@ function WhatIDo() {
       <div className="container">
         <h2>{t.title}</h2>
         <div className="what-i-do-content">
-        
+
           {/* Cột 1 (đã bỏ motion) */}
-          <div className="focus-card">
+          <div className="focus-card glass-card" data-aos="fade-up">
             <div className="focus-icon"><FaJava /></div>
             <div className="focus-text">
               <h3>{t.backend.title}</h3>
@@ -41,7 +41,7 @@ function WhatIDo() {
           </div>
 
           {/* Cột 2 (đã bỏ motion) */}
-          <div className="focus-card">
+          <div className="focus-card glass-card" data-aos="fade-up" data-aos-delay="100">
             <div className="focus-icon"><FaReact /></div>
             <div className="focus-text">
               <h3>{t.frontend.title}</h3>
@@ -50,7 +50,7 @@ function WhatIDo() {
           </div>
 
           {/* Cột 3 (đã bỏ motion) */}
-          <div className="focus-card">
+          <div className="focus-card glass-card" data-aos="fade-up" data-aos-delay="200">
             <div className="focus-icon"><FaBug /></div>
             <div className="focus-text">
               <h3>{t.tester.title}</h3>

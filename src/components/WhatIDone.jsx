@@ -8,14 +8,14 @@ import { useLanguage } from '../context/LanguageContext';
 
 function WhatIDone() {
   const [activeTab, setActiveTab] = useState('projects');
-  
+
   // === THÊM STATE CHO MODAL ===
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { language, translations } = useLanguage();
   const t = translations[language].whatIDone;
-  
+
   const projects = t.projects;
   const certifications = t.certifications;
   const activities = t.activities;
@@ -45,8 +45,8 @@ function WhatIDone() {
   };
 
   return (
-    <motion.section 
-      id="what-i-done" 
+    <motion.section
+      id="what-i-done"
       className="section"
       variants={sectionVariants}
       initial="hidden"
@@ -55,22 +55,22 @@ function WhatIDone() {
     >
       <div className="container">
         <h2>{t.title}</h2>
-        
+
         {/* ... (Giữ nguyên phần Tab Navigation) ... */}
         <div className="tab-navigation">
-          <button 
+          <button
             className={`tab-button ${activeTab === 'projects' ? 'active' : ''}`}
             onClick={() => setActiveTab('projects')}
           >
             <FaGithub /> {t.tabProjects}
           </button>
-          <button 
+          <button
             className={`tab-button ${activeTab === 'certs' ? 'active' : ''}`}
             onClick={() => setActiveTab('certs')}
           >
             <FaAward /> {t.tabCerts}
           </button>
-          <button 
+          <button
             className={`tab-button ${activeTab === 'activities' ? 'active' : ''}`}
             onClick={() => setActiveTab('activities')}
           >
@@ -92,18 +92,18 @@ function WhatIDone() {
               >
                 {projects.map((project, index) => (
                   // === SỬA ĐỔI: Thêm onClick để mở Modal ===
-                  <div 
-                    key={index} 
-                    className="project-entry clickable-project" // Thêm class để CSS cursor pointer
+                  <div
+                    key={index}
+                    className="project-entry clickable-project glass-card" // Thêm class để CSS cursor pointer
                     onClick={() => openModal(project)}
-                  > 
+                  >
                     <h3>{project.title}</h3>
                     <ul className="project-tech-list">
                       {/* Chỉ hiện tối đa 4 công nghệ để gọn */}
                       {project.tech.slice(0, 4).map((techItem, i) => <li key={i}>{techItem}</li>)}
                       {project.tech.length > 4 && <li>+{project.tech.length - 4}</li>}
                     </ul>
-                    
+
                     <div className="project-details">
                       <div className="detail-item">
                         <FaInfoCircle className="detail-icon" />
@@ -117,7 +117,7 @@ function WhatIDone() {
                         để dành hiển thị trong Modal hoặc giữ nguyên tùy bạn. 
                         Ở đây tôi giữ nguyên nhưng bạn có thể bỏ bớt.
                       */}
-                       <div className="detail-item">
+                      <div className="detail-item">
                         <FaUserFriends className="detail-icon" />
                         <div>
                           <h4>{t.detailLabels.teamSize}</h4>
@@ -132,7 +132,7 @@ function WhatIDone() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="click-hint">
                       (Nhấn để xem chi tiết)
                     </div>
@@ -142,7 +142,7 @@ function WhatIDone() {
             )}
 
             {/* ... (Giữ nguyên Tab Certs và Activities) ... */}
-             {activeTab === 'certs' && (
+            {activeTab === 'certs' && (
               <motion.div key="certs" variants={tabContentVariants} initial="hidden" animate="visible" exit="exit">
                 <div className="certs-grid">
                   {certifications.map((cert, index) => (
@@ -180,10 +180,10 @@ function WhatIDone() {
       </div>
 
       {/* === ĐẶT MODAL Ở ĐÂY === */}
-      <ProjectModal 
-        isOpen={isModalOpen} 
-        onClose={closeModal} 
-        project={selectedProject} 
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        project={selectedProject}
       />
 
     </motion.section>

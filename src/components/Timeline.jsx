@@ -45,19 +45,19 @@ function Timeline() {
           <div className="timeline-line-bg"></div>
 
           {/* Đường kẻ dọc màu ĐỎ (Chạy theo cuộn) */}
-          <motion.div 
+          <motion.div
             className="timeline-line-progress"
-            style={{ scaleY: scaleY }} 
+            style={{ scaleY: scaleY }}
           />
 
           {/* Danh sách các mốc */}
           <div className="timeline-items">
             {t.steps.map((step, index) => (
               <div key={index} className={`timeline-row ${index % 2 === 0 ? 'left' : 'right'}`}>
-                
+
                 {/* Nội dung Card */}
-                <motion.div 
-                  className="timeline-content"
+                <motion.div
+                  className="timeline-content glass-card"
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}

@@ -33,13 +33,13 @@ function Introduction() {
     >
       <div className="container">
         <h2>{introT.title}</h2>
-        
+
         {/* ĐÃ XÓA PHẦN HIGHLIGHTS-BOX TRÙNG LẶP Ở ĐÂY */}
 
         <div className="intro-grid">
 
           {/* Card 1: Điểm nhấn chuyên môn (Highlights) */}
-          <motion.div className="intro-card highlight-card" variants={cardVariants}>
+          <motion.div className="intro-card highlight-card glass-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaStar className="intro-icon" />
             </div>
@@ -51,8 +51,8 @@ function Introduction() {
             </ul>
           </motion.div>
 
-           {/* Card 2: Giải quyết vấn đề (Problem Solving - NEW) */}
-           <motion.div className="intro-card" variants={cardVariants}>
+          {/* Card 2: Giải quyết vấn đề (Problem Solving - NEW) */}
+          <motion.div className="intro-card glass-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaTools className="intro-icon" />
             </div>
@@ -63,9 +63,9 @@ function Introduction() {
               ))}
             </ul>
           </motion.div>
-          
+
           {/* Card 3: AI Collaboration (NEW) */}
-           <motion.div className="intro-card ai-card" variants={cardVariants}>
+          <motion.div className="intro-card ai-card glass-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaBrain className="intro-icon" />
             </div>
@@ -74,7 +74,7 @@ function Introduction() {
           </motion.div>
 
           {/* Card 4: Học vấn */}
-          <motion.div className="intro-card" variants={cardVariants}>
+          <motion.div className="intro-card glass-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaUniversity className="intro-icon" />
             </div>
@@ -87,7 +87,7 @@ function Introduction() {
           </motion.div>
 
           {/* Card 5: Mục tiêu */}
-          <motion.div className="intro-card" variants={cardVariants}>
+          <motion.div className="intro-card glass-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaFlagCheckered className="intro-icon" />
             </div>
@@ -99,7 +99,7 @@ function Introduction() {
           </motion.div>
 
           {/* Card 6: Giá trị */}
-          <motion.div className="intro-card" variants={cardVariants}>
+          <motion.div className="intro-card glass-card" variants={cardVariants}>
             <div className="card-icon-wrapper">
               <FaGem className="intro-icon" />
             </div>
