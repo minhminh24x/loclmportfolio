@@ -169,8 +169,8 @@ export const translations = {
   tech: ["Spring Boot", "PostgreSQL", "Spring Security", "JWT", "Microservices"],
   link: "https://github.com/HungPoris/F_Laboratory",
   demolink: "https://web.flaboratory.cloud/login"
-} link: null
-        },
+} 
+        ,
         {
           title: "Online Clothing Store (PenguinShop)",
           summary: "Dự án MVC thuần Java. Tự viết connection pool, xử lý Session thủ công.",
@@ -514,7 +514,7 @@ export const translations = {
   tech: ["Spring Boot", "PostgreSQL", "Spring Security", "JWT", "Microservices"],
   link: "https://github.com/HungPoris/F_Laboratory",
   demolink: "https://web.flaboratory.cloud/login"
-}
+},
         {
           title: "Online Clothing Store (PenguinShop)",
           summary: "Pure Java MVC Project. Manual Connection Pool & Session handling.",
@@ -695,4 +695,5 @@ export const translations = {
     },
   },
 };
+
 
