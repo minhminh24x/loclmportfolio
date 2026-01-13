@@ -93,8 +93,8 @@ function Introduction() {
             </div>
             <h3>{introT.goals.title}</h3>
             <div className="intro-content-block align-left">
-              <p>🚀 <strong>Short-term:</strong><br /> {introT.goals.line1}</p>
-              <p>🎯 <strong>Long-term:</strong><br /> {introT.goals.line2}</p>
+              <p> <strong>Short-term:</strong><br /> {introT.goals.line1}</p>
+              <p> <strong>Long-term:</strong><br /> {introT.goals.line2}</p>
             </div>
           </motion.div>
 
@@ -105,9 +105,9 @@ function Introduction() {
             </div>
             <h3>{introT.values.title}</h3>
             <div className="intro-content-block align-left">
-              <p>✔️ {introT.values.line1}</p>
-              <p>✔️ {introT.values.line2}</p>
-              <p>✔️ {introT.values.line3}</p>
+              <p> {introT.values.line1}</p>
+              <p> {introT.values.line2}</p>
+              <p> {introT.values.line3}</p>
             </div>
           </motion.div>
 
@@ -116,5 +116,6 @@ function Introduction() {
     </motion.section>
   );
 }
+
 
 export default Introduction;
