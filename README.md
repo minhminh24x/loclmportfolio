@@ -19,12 +19,12 @@
 
 Trang web này không chỉ là một trang HTML/CSS tĩnh. Nó là một ứng dụng React đầy đủ với các tính năng:
 
-* **🎨 Hiệu ứng "Oách":** Tích hợp `react-tsparticles` cho nền hạt (particles) di chuyển và `framer-motion` cho TOÀN BỘ hiệu ứng động.
-* **✨ Scroll Reveal:** "Nguyên 1 phần" (sections) sẽ trượt vào mượt mà khi người dùng cuộn trang (sử dụng `whileInView` của Framer Motion).
-* **🌍 Đa ngôn ngữ (VI/EN):** Hỗ trợ chuyển đổi ngôn ngữ tức thì bằng `React Context` mà không cần tải lại trang.
-* **✉️ Contact Form "Không Backend":** Tích hợp **EmailJS** cho phép khách truy cập gửi email trực tiếp từ trang web mà không cần server.
-* **📱 Responsive Design:** Tự động co giãn trên mọi thiết bị từ Desktop đến Mobile (sử dụng `flex-wrap` và `grid-template-columns`).
-* **🌗 Theme Đen-Đỏ:** Một theme "ngầu" với tông màu Đen-Đỏ (Dark Mode) nhất quán.
+* ** Hiệu ứng "Oách":** Tích hợp `react-tsparticles` cho nền hạt (particles) di chuyển và `framer-motion` cho TOÀN BỘ hiệu ứng động.
+* ** Scroll Reveal:** "Nguyên 1 phần" (sections) sẽ trượt vào mượt mà khi người dùng cuộn trang (sử dụng `whileInView` của Framer Motion).
+* ** Đa ngôn ngữ (VI/EN):** Hỗ trợ chuyển đổi ngôn ngữ tức thì bằng `React Context` mà không cần tải lại trang.
+* ** Contact Form "Không Backend":** Tích hợp **EmailJS** cho phép khách truy cập gửi email trực tiếp từ trang web mà không cần server.
+* ** Responsive Design:** Tự động co giãn trên mọi thiết bị từ Desktop đến Mobile (sử dụng `flex-wrap` và `grid-template-columns`).
+* ** Theme Đen-Đỏ:** Một theme "ngầu" với tông màu Đen-Đỏ (Dark Mode) nhất quán.
 
 ## 🛠 Công nghệ sử dụng
 
