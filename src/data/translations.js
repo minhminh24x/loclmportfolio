@@ -154,19 +154,22 @@ export const translations = {
           link: "https://github.com/minhminh24x/tailocshop",
           demoLink: "https://tailocshop.vercel.app/" 
         },
-        {
-          title: "Medical Record System",
-          summary: "Hệ thống quản lý bệnh án (FPT Software Internship). Xử lý bảo mật API với Spring Security.",
-          longDescription: "Hệ thống quản lý quy mô lớn tại doanh nghiệp. Tôi chịu trách nhiệm module bảo mật, đảm bảo dữ liệu bệnh nhân không bị truy cập trái phép bằng Spring Security và phân quyền Role-based chặt chẽ.",
-          features: [
-            "Spring Security Custom Filter Chain.",
-            "Mã hóa dữ liệu nhạy cảm (Sensitive Data Encryption).",
-            "RESTful API chuẩn Level 2."
-          ],
-          teamSize: "6 thành viên",
-          myRole: "Backend Developer (Spring Boot, PostgreSQL, JWT).",
-          tech: ["Spring Boot", "PostgreSQL", "JWT"],
-          link: null
+       {
+  title: "Medical Record System (F-Laboratory)",
+  summary: "Phát triển Backend module quản lý Bệnh nhân và Bệnh án. Cấu hình bảo mật Service và tích hợp xác thực với hệ thống IAM.",
+  longDescription: "Trong kiến trúc Microservices của dự án, tôi chịu trách nhiệm phát triển Service quản lý nghiệp vụ cốt lõi. Cụ thể, tôi xây dựng các API cho chức năng quản lý Bệnh nhân (Patient) và Hồ sơ bệnh án (Medical Record). Ngoài ra, tôi thực hiện cấu hình Spring Security để bảo vệ Service, đồng thời triển khai cơ chế giao tiếp và xác thực người dùng thông qua việc kết nối chặt chẽ với API IAM (Identity & Access Management).",
+  features: [
+    "RESTful API quản lý vòng đời hồ sơ Bệnh nhân (Patient) và Bệnh án (Medical Record).",
+    "Cấu hình Spring Security Filter Chain cho Microservice.",
+    "Tích hợp JWT và giao tiếp xác thực với IAM Service (Service-to-Service communication).",
+    "Xử lý nghiệp vụ và lưu trữ dữ liệu y tế trên PostgreSQL."
+  ],
+  teamSize: "6 thành viên",
+  myRole: "Backend Developer (Spring Boot, PostgreSQL, Security, Microservices).",
+  tech: ["Spring Boot", "PostgreSQL", "Spring Security", "JWT", "Microservices"],
+  link: "https://github.com/HungPoris/F_Laboratory",
+  demolink: "https://web.flaboratory.cloud/login"
+} link: null
         },
         {
           title: "Online Clothing Store (PenguinShop)",
@@ -497,19 +500,21 @@ export const translations = {
           demoLink: "https://tailocshop.vercel.app/"
         },
         {
-          title: "Medical Record System",
-          summary: "Patient Management (FPT Software Internship). API Security with Spring Security.",
-          longDescription: "Large-scale management system at the enterprise level. I was responsible for the security module, ensuring patient data integrity using Spring Security and strict Role-based Access Control.",
-          features: [
-            "Spring Security Custom Filter Chain.",
-            "Sensitive Data Encryption.",
-            "Standard Level 2 RESTful API."
-          ],
-          teamSize: "6 Members",
-          myRole: "Backend Dev (Spring Boot, PostgreSQL, JWT).",
-          tech: ["Spring Boot", "PostgreSQL", "Security"],
-          link: null
-        },
+  title: "Medical Record System (F-Laboratory)",
+  summary: "Backend development for Patient & Medical Record modules. Service Security configuration and IAM integration.",
+  longDescription: "Responsible for the core business services within a Microservices architecture. I developed RESTful APIs for Patient and Medical Record management. Furthermore, I implemented service-level security using Spring Security and established secure Service-to-Service communication/authentication by integrating with the IAM (Identity & Access Management) API.",
+  features: [
+    "RESTful APIs for Patient and Medical Record lifecycle management.",
+    "Spring Security Filter Chain configuration for Microservices.",
+    "JWT integration and IAM Service authentication (Service-to-Service).",
+    "Business logic processing and medical data storage with PostgreSQL."
+  ],
+  teamSize: "6 Members",
+  myRole: "Backend Developer (Spring Boot, PostgreSQL, Security, Microservices).",
+  tech: ["Spring Boot", "PostgreSQL", "Spring Security", "JWT", "Microservices"],
+  link: "https://github.com/HungPoris/F_Laboratory",
+  demolink: "https://web.flaboratory.cloud/login"
+}
         {
           title: "Online Clothing Store (PenguinShop)",
           summary: "Pure Java MVC Project. Manual Connection Pool & Session handling.",
@@ -690,3 +695,4 @@ export const translations = {
     },
   },
 };
+
